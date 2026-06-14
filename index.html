@@ -3,1335 +3,691 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Checklist Digital | Consumo Consciente de Energia</title>
+  <title>Guia Digital para Descarte Correto de Resíduos</title>
+  <meta name="description" content="Guia digital acadêmico para orientar a separação e destinação correta de resíduos domésticos, relacionando meio ambiente e saúde pública." />
   <style>
     :root {
-      --bg: #f4f7f5;
-      --paper: #ffffff;
-      --green-900: #173b2f;
-      --green-800: #235746;
-      --green-700: #2f6f59;
-      --green-100: #e4f1eb;
-      --blue-900: #16324f;
-      --blue-100: #e6f0fa;
-      --yellow-100: #fff2c6;
-      --yellow-600: #c58b14;
-      --gray-700: #45515c;
-      --gray-500: #6b7785;
-      --gray-200: #dde5df;
-      --shadow: 0 18px 45px rgba(23, 59, 47, 0.12);
-      --radius-xl: 28px;
-      --radius-lg: 18px;
-      --radius-md: 12px;
+      --green: #2e7d32;
+      --green-dark: #1b5e20;
+      --green-soft: #e8f5e9;
+      --blue: #1565c0;
+      --blue-soft: #e3f2fd;
+      --yellow: #f9a825;
+      --gray: #546e7a;
+      --light: #f7faf7;
+      --dark: #1f2933;
+      --white: #ffffff;
+      --radius: 20px;
+      --shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
+      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(47, 111, 89, 0.18), transparent 28rem),
-        linear-gradient(180deg, #f8fbf9 0%, var(--bg) 100%);
-      color: var(--green-900);
+      color: var(--dark);
+      background: var(--light);
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .page {
-      width: min(1120px, calc(100% - 32px));
-      margin: 0 auto;
-    }
-
     header {
-      padding: 36px 0 22px;
+      background: linear-gradient(135deg, rgba(46,125,50,0.94), rgba(21,101,192,0.90)), url('assets/ambiente-fica-o-lixo-organizado-com-etiquetas.jpeg') center/cover;
+      color: var(--white);
+      padding: 72px 20px 54px;
+      text-align: center;
     }
 
-    .hero {
-      background: linear-gradient(135deg, var(--green-900), var(--green-700));
-      color: #fff;
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      position: relative;
-    }
-
-    .hero::before,
-    .hero::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    .hero::before {
-      width: 360px;
-      height: 360px;
-      right: -120px;
-      top: -120px;
-    }
-
-    .hero::after {
-      width: 220px;
-      height: 220px;
-      left: -70px;
-      bottom: -100px;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      padding: 46px;
-      display: grid;
-      grid-template-columns: 1.4fr 0.8fr;
-      gap: 28px;
-      align-items: center;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+    header .badge {
+      display: inline-block;
       padding: 8px 14px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.14);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      font-size: 0.88rem;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
       font-weight: 700;
-      letter-spacing: 0.02em;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
+      font-size: 0.92rem;
     }
 
     h1 {
-      font-size: clamp(2rem, 8vw, 4.5rem);
-      line-height: 1.02;
-      margin-bottom: 20px;
-      letter-spacing: -0.05em;
+      margin: 0 auto 14px;
+      max-width: 980px;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -1.5px;
     }
 
-    .hero p {
-      font-size: 1.05rem;
-      max-width: 760px;
-      color: rgba(255, 255, 255, 0.88);
+    header p {
+      max-width: 850px;
+      margin: 0 auto 28px;
+      font-size: 1.12rem;
+      opacity: 0.96;
     }
 
-    .hero-card {
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 24px;
-      padding: 24px;
-      backdrop-filter: blur(10px);
-    }
-
-    .hero-card strong {
-      display: block;
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-    }
-
-    .hero-card ul {
-      list-style: none;
-      display: grid;
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    .hero-card li {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      color: rgba(255, 255, 255, 0.9);
-      font-size: 0.96rem;
-    }
-
-    .hero-card li::before {
-      content: "✓";
-      flex: 0 0 24px;
-      width: 24px;
-      height: 24px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.18);
-      font-weight: bold;
-    }
-
-    nav {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin: 20px 0 34px;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+    .btn-primary { background: var(--white); color: var(--green-dark); }
+    .btn-secondary { background: rgba(255,255,255,0.16); color: var(--white); border: 1px solid rgba(255,255,255,0.45); }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e5e7eb;
+      padding: 10px 16px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    nav .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      gap: 8px;
     }
 
     nav a {
+      color: var(--green-dark);
       text-decoration: none;
-      background: var(--paper);
-      border: 1px solid var(--gray-200);
-      color: var(--green-800);
-      padding: 10px 14px;
+      padding: 8px 12px;
       border-radius: 999px;
-      font-size: 0.92rem;
       font-weight: 700;
-      box-shadow: 0 8px 20px rgba(23, 59, 47, 0.06);
-      transition: 0.2s ease;
+      font-size: 0.92rem;
     }
 
-    nav a:hover {
-      transform: translateY(-2px);
-      border-color: var(--green-700);
-    }
+    nav a:hover { background: var(--green-soft); }
 
-    section {
-      margin-bottom: 28px;
-    }
+    main { max-width: 1120px; margin: 0 auto; padding: 34px 18px 70px; }
+    section { margin: 38px 0; }
 
-    .section-card {
-      background: var(--paper);
-      border: 1px solid var(--gray-200);
-      border-radius: var(--radius-xl);
-      padding: 32px;
-      box-shadow: 0 12px 32px rgba(23, 59, 47, 0.07);
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(46,125,50,0.08);
     }
 
     .section-title {
-      display: flex;
-      gap: 14px;
-      align-items: center;
-      margin-bottom: 18px;
+      color: var(--green-dark);
+      font-size: clamp(1.55rem, 3vw, 2.3rem);
+      line-height: 1.14;
+      margin: 0 0 14px;
     }
 
-    .icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 15px;
-      display: grid;
-      place-items: center;
-      background: var(--green-100);
-      font-size: 1.35rem;
-    }
-
-    h2 {
-      font-size: clamp(1.55rem, 3vw, 2.1rem);
-      line-height: 1.1;
-      color: var(--green-900);
-      letter-spacing: -0.035em;
-    }
-
-    .lead {
-      color: var(--gray-700);
-      max-width: 850px;
-      margin-bottom: 20px;
-    }
+    .subtitle { color: var(--gray); margin-top: 0; }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
     }
 
-    .info-card {
-      border-radius: var(--radius-lg);
+    .col-4 { grid-column: span 4; }
+    .col-6 { grid-column: span 6; }
+    .col-8 { grid-column: span 8; }
+    .col-12 { grid-column: span 12; }
+
+    .info-box {
+      border-radius: 18px;
       padding: 20px;
-      background: #f8fbf9;
-      border: 1px solid var(--gray-200);
+      background: var(--green-soft);
+      border-left: 6px solid var(--green);
+      height: 100%;
     }
 
-    .info-card .mini {
-      display: inline-flex;
-      width: 38px;
-      height: 38px;
-      border-radius: 13px;
-      align-items: center;
-      justify-content: center;
-      background: var(--blue-100);
-      margin-bottom: 12px;
-      font-size: 1.2rem;
+    .info-box.blue {
+      background: var(--blue-soft);
+      border-left-color: var(--blue);
     }
 
-    .info-card h3 {
-      font-size: 1.05rem;
-      margin-bottom: 8px;
-      color: var(--green-900);
+    .info-box.yellow {
+      background: #fff8e1;
+      border-left-color: var(--yellow);
     }
 
-    .info-card p {
-      color: var(--gray-700);
-      font-size: 0.96rem;
-    }
+    .info-box h3 { margin-top: 0; color: var(--green-dark); }
+    .info-box.blue h3 { color: #0d47a1; }
+    .info-box.yellow h3 { color: #8a5a00; }
 
-    .ods-wrap {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-top: 20px;
-    }
+    ul, ol { padding-left: 22px; }
+    li { margin-bottom: 7px; }
 
-    .ods {
-      border-radius: var(--radius-lg);
-      padding: 22px;
-      min-height: 150px;
-      color: #fff;
-      position: relative;
+    .waste-table {
+      width: 100%;
+      border-collapse: collapse;
       overflow: hidden;
+      border-radius: 16px;
+      background: var(--white);
     }
 
-    .ods strong {
-      display: block;
-      font-size: 1.05rem;
-      margin-bottom: 8px;
+    .waste-table th, .waste-table td {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 14px;
+      text-align: left;
+      vertical-align: top;
     }
 
-    .ods span {
-      font-size: 3rem;
-      font-weight: 900;
-      opacity: 0.22;
-      position: absolute;
-      right: 20px;
-      bottom: 6px;
+    .waste-table th {
+      background: var(--green-dark);
+      color: white;
     }
 
-    .ods-12 {
-      background: linear-gradient(135deg, #b25b1d, #d79b35);
-    }
-
-    .ods-7 {
-      background: linear-gradient(135deg, #e1a200, #ffcf45);
-      color: #4a3100;
-    }
+    .waste-table tr:last-child td { border-bottom: none; }
 
     .checklist {
       display: grid;
-      gap: 12px;
-      margin-top: 20px;
+      gap: 10px;
+      margin-top: 16px;
     }
 
     .check-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 12px 14px;
+    }
+
+    .check-item input { margin-top: 5px; transform: scale(1.15); }
+
+    .gallery {
       display: grid;
-      grid-template-columns: 38px 1fr;
+      grid-template-columns: repeat(4, 1fr);
       gap: 14px;
-      align-items: start;
-      background: #f8fbf9;
-      border: 1px solid var(--gray-200);
+    }
+
+    figure {
+      margin: 0;
+      background: white;
       border-radius: 16px;
-      padding: 14px 16px;
-      cursor: pointer;
-      transition: 0.2s ease;
-    }
-
-    .check-item:hover {
-      transform: translateY(-1px);
-      border-color: rgba(47, 111, 89, 0.45);
-    }
-
-    .check-item input {
-      width: 24px;
-      height: 24px;
-      margin-top: 2px;
-      accent-color: var(--green-700);
-      cursor: pointer;
-    }
-
-    .check-item span {
-      color: var(--gray-700);
-    }
-
-    .check-item.checked {
-      background: var(--green-100);
-      border-color: rgba(47, 111, 89, 0.4);
-    }
-
-    .check-item.checked span {
-      text-decoration: line-through;
-      color: var(--green-800);
-    }
-
-    .progress-area {
-      background: var(--green-100);
-      border-radius: 18px;
-      padding: 18px;
-      margin: 20px 0;
-      border: 1px solid rgba(47, 111, 89, 0.18);
-    }
-
-    .progress-line {
-      height: 14px;
-      background: rgba(23, 59, 47, 0.12);
-      border-radius: 999px;
       overflow: hidden;
-      margin-top: 10px;
+      box-shadow: var(--shadow);
+      border: 1px solid #e5e7eb;
     }
 
-    .progress-fill {
-      width: 0%;
-      height: 100%;
-      border-radius: inherit;
-      background: linear-gradient(90deg, var(--green-700), var(--yellow-600));
-      transition: width 0.3s ease;
-    }
-
-    .button-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    button,
-    .btn-link {
-      border: 0;
-      border-radius: 999px;
-      padding: 12px 18px;
-      font-weight: 800;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      transition: 0.2s ease;
-      font-size: 0.95rem;
-    }
-
-    button:hover,
-    .btn-link:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      background: var(--green-800);
-      color: #fff;
-    }
-
-    .btn-secondary {
-      background: var(--yellow-100);
-      color: #6c4700;
-    }
-
-    .btn-light {
-      background: #eef4f0;
-      color: var(--green-800);
-    }
-
-    .steps {
-      counter-reset: step;
-      display: grid;
-      gap: 14px;
-      margin-top: 20px;
-    }
-
-    .step {
-      display: grid;
-      grid-template-columns: 48px 1fr;
-      gap: 14px;
-      align-items: start;
-      padding: 18px;
-      border-radius: var(--radius-lg);
-      background: #f8fbf9;
-      border: 1px solid var(--gray-200);
-    }
-
-    .step::before {
-      counter-increment: step;
-      content: counter(step);
-      width: 42px;
-      height: 42px;
-      border-radius: 15px;
-      display: grid;
-      place-items: center;
-      background: var(--green-800);
-      color: #fff;
-      font-weight: 900;
-    }
-
-    .step h3 {
-      margin-bottom: 4px;
-      color: var(--green-900);
-    }
-
-    .step p {
-      color: var(--gray-700);
-    }
-
-    .reminders {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-top: 20px;
-    }
-
-    .reminder {
-      border-radius: var(--radius-lg);
-      padding: 18px;
-      background: var(--yellow-100);
-      border: 1px dashed rgba(197, 139, 20, 0.55);
-    }
-
-    .reminder small {
-      display: block;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #795200;
-      font-weight: 900;
-      margin-bottom: 6px;
-      font-size: 0.72rem;
-    }
-
-    .reminder strong {
-      color: #4f3500;
-      font-size: 1.05rem;
-    }
-
-    .reminder-download {
-      display: flex;
-      justify-content: center;
-      margin-top: 22px;
-    }
-
-    .photo-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .photo-list li {
-      list-style: none;
-      background: #f8fbf9;
-      border: 1px solid var(--gray-200);
-      border-radius: 16px;
-      padding: 14px;
-      color: var(--gray-700);
-    }
-
-
-
-    .photo-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-      margin-top: 20px;
-    }
-
-    .photo-box {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 22px;
-      align-items: center;
-      padding: 20px;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--gray-200);
-      background: #f8fbf9;
-    }
-
-    .photo-placeholder {
-      width: 200px;
-      height: 150px;
-      border-radius: 18px;
-      border: 2px dashed rgba(47, 111, 89, 0.45);
-      background: #ffffff;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      color: var(--green-800);
-      font-size: 0.82rem;
-      font-weight: 900;
-      letter-spacing: 0.04em;
-    }
-
-    .photo-img,
-    .qr-img {
-      width: 200px;
-      height: 150px;
+    figure img {
+      width: 100%;
+      height: 230px;
       object-fit: cover;
-      border-radius: 18px;
-      border: 1px solid var(--gray-200);
-      box-shadow: 0 8px 20px rgba(23, 59, 47, 0.1);
-      background: #ffffff;
+      display: block;
     }
 
-    .qr-img {
-      width: 160px;
-      height: 160px;
-      object-fit: contain;
+    figcaption {
+      padding: 12px 14px;
+      font-size: 0.92rem;
+      color: var(--gray);
     }
 
-    .photo-content h3 {
-      color: var(--green-900);
-      margin-bottom: 8px;
-    }
-
-    .photo-content p {
-      color: var(--gray-700);
-    }
-
-    .qr-box {
+    .qr-card {
       display: grid;
       grid-template-columns: 180px 1fr;
-      gap: 22px;
+      gap: 20px;
       align-items: center;
-      margin-top: 20px;
-      padding: 20px;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--gray-200);
-      background: #f8fbf9;
-    }
-
-    .fake-qr {
-      width: 160px;
-      height: 160px;
+      background: #f8fafc;
+      border: 2px dashed #b0bec5;
       border-radius: 18px;
-      background:
-        linear-gradient(90deg, var(--green-900) 10px, transparent 10px) 0 0 / 30px 30px,
-        linear-gradient(var(--green-900) 10px, transparent 10px) 0 0 / 30px 30px,
-        #fff;
-      border: 12px solid #fff;
-      box-shadow: inset 0 0 0 2px var(--green-900), 0 8px 20px rgba(23, 59, 47, 0.1);
-      display: grid;
-      place-items: center;
-      color: var(--green-900);
-      font-size: 0.7rem;
-      text-align: center;
-      font-weight: 900;
+      padding: 18px;
     }
 
-    .sources {
-      display: grid;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .sources a {
-      display: block;
-      padding: 14px 16px;
-      background: #f8fbf9;
-      border: 1px solid var(--gray-200);
+    .qr-placeholder {
+      width: 180px;
+      height: 180px;
       border-radius: 14px;
-      color: var(--green-800);
-      text-decoration: none;
-      font-weight: 700;
-      overflow-wrap: anywhere;
+      background: repeating-linear-gradient(45deg, #ffffff, #ffffff 10px, #edf2f7 10px, #edf2f7 20px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--gray);
+      font-weight: 800;
+      padding: 14px;
+      border: 1px solid #cfd8dc;
+    }
+
+    .small { font-size: 0.92rem; color: var(--gray); }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: var(--green-soft);
+      color: var(--green-dark);
+      font-weight: 800;
+      font-size: 0.86rem;
+      margin: 4px 5px 4px 0;
     }
 
     footer {
+      background: var(--green-dark);
+      color: white;
+      padding: 28px 20px;
       text-align: center;
-      padding: 30px 0 44px;
-      color: var(--gray-500);
-      font-size: 0.95rem;
     }
 
-    .print-note {
-      background: var(--blue-100);
-      border-left: 5px solid var(--blue-900);
-      border-radius: 14px;
-      padding: 14px 16px;
-      color: var(--blue-900);
+    footer p { max-width: 900px; margin: 6px auto; }
+
+
+
+    .checklist-controls {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 12px;
+      align-items: end;
       margin-top: 18px;
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .checklist-controls label {
       font-weight: 700;
+      color: var(--green-dark);
     }
 
-    @media (max-width: 860px) {
-      .hero-content,
-      .grid,
-      .ods-wrap,
-      .reminders,
-      .photo-list,
-      .qr-box {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-content,
-      .section-card {
-        padding: 26px;
-      }
-
-      .fake-qr {
-        margin: 0 auto;
-      }
-
-      .photo-box {
-        grid-template-columns: 1fr;
-      }
-
-      .photo-placeholder,
-      .photo-img {
-        width: 100%;
-        height: 210px;
-      }
+    .checklist-controls input[type="date"] {
+      width: 100%;
+      margin-top: 6px;
+      padding: 11px 12px;
+      border: 1px solid #cfd8dc;
+      border-radius: 10px;
+      font: inherit;
+      background: white;
     }
 
-
-    @media (max-width: 1024px) {
-      .hero-content {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-card {
-        max-width: 100%;
-      }
+    .action-btn {
+      border: none;
+      cursor: pointer;
+      padding: 12px 14px;
+      border-radius: 12px;
+      font-weight: 800;
+      font: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+
+    .action-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+    .action-btn.print { background: var(--green); color: white; }
+    .action-btn.clear { background: #eceff1; color: var(--dark); }
+
+    #print-summary {
+      display: none;
+      margin-top: 20px;
+      border: 1px solid #cfd8dc;
+      border-radius: 14px;
+      padding: 16px;
+      background: white;
+    }
+
+    #print-summary h3 { margin-top: 0; color: var(--green-dark); }
 
     @media (max-width: 700px) {
-      body {
-        line-height: 1.55;
-      }
-
-      .page {
-        width: min(100% - 20px, 1120px);
-      }
-
-      header {
-        padding: 18px 0 12px;
-      }
-
-      .hero {
-        border-radius: 22px;
-      }
-
-      .hero-content {
-        padding: 26px 22px;
-        gap: 20px;
-      }
-
-      .tag {
-        max-width: 100%;
-        font-size: 0.76rem;
-        padding: 7px 11px;
-        line-height: 1.3;
-      }
-
-      h1 {
-        font-size: clamp(2rem, 10vw, 3rem);
-        letter-spacing: -0.045em;
-      }
-
-      .hero p {
-        font-size: 0.98rem;
-      }
-
-      .hero-card {
-        padding: 18px;
-        border-radius: 20px;
-      }
-
-      nav {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding: 2px 2px 12px;
-        margin: 14px 0 22px;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: thin;
-      }
-
-      nav a {
-        flex: 0 0 auto;
-        font-size: 0.84rem;
-        padding: 9px 12px;
-        white-space: nowrap;
-      }
-
-      section {
-        margin-bottom: 18px;
-      }
-
-      .section-card {
-        padding: 22px 18px;
-        border-radius: 22px;
-      }
-
-      .section-title {
-        align-items: flex-start;
-        gap: 12px;
-      }
-
-      .icon {
-        width: 40px;
-        height: 40px;
-        border-radius: 14px;
-        font-size: 1.15rem;
-        flex: 0 0 40px;
-      }
-
-      h2 {
-        font-size: clamp(1.35rem, 7vw, 1.85rem);
-      }
-
-      .lead {
-        font-size: 0.96rem;
-        margin-bottom: 16px;
-      }
-
-      .grid,
-      .ods-wrap,
-      .reminders,
-      .photo-list,
-      .qr-box,
-      .photo-box {
-        grid-template-columns: 1fr;
-      }
-
-      .info-card,
-      .reminder,
-      .step,
-      .qr-box,
-      .photo-box {
-        padding: 16px;
-      }
-
-      .ods {
-        min-height: 132px;
-      }
-
-      .check-item {
-        grid-template-columns: 32px 1fr;
-        gap: 10px;
-        padding: 13px 12px;
-      }
-
-      .check-item input {
-        width: 22px;
-        height: 22px;
-      }
-
-      .button-row {
-        display: grid;
-        grid-template-columns: 1fr;
-      }
-
-      button,
-      .btn-link {
-        width: 100%;
-      }
-
-      .reminder-download {
-        justify-content: stretch;
-      }
-
-      .step {
-        grid-template-columns: 42px 1fr;
-      }
-
-      .step::before {
-        width: 38px;
-        height: 38px;
-        border-radius: 13px;
-      }
-
-      .fake-qr,
-      .qr-img {
-        margin: 0 auto;
-      }
-
-      .qr-box {
-        text-align: left;
-      }
-
-      .photo-placeholder,
-      .photo-img {
-        width: 100%;
-        height: 220px;
-      }
-
-      .print-note {
-        font-size: 0.88rem;
-        overflow-wrap: anywhere;
-      }
-
-      .sources a {
-        font-size: 0.9rem;
-      }
-
-      footer {
-        padding: 20px 8px 32px;
-      }
+      .checklist-controls { grid-template-columns: 1fr; }
+      .action-btn { width: 100%; }
     }
-
-    @media (max-width: 420px) {
-      .page {
-        width: min(100% - 14px, 1120px);
-      }
-
-      .hero-content,
-      .section-card {
-        padding: 20px 14px;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      .hero-card li {
-        font-size: 0.9rem;
-      }
-
-      .section-title {
-        gap: 10px;
-      }
-
-      .icon {
-        width: 36px;
-        height: 36px;
-        flex-basis: 36px;
-      }
-
-      .progress-area {
-        padding: 14px;
-      }
-
-      .check-item span,
-      .step p,
-      .info-card p,
-      .photo-content p,
-      .lead {
-        font-size: 0.92rem;
-      }
-
-      .photo-placeholder,
-      .photo-img {
-        height: 190px;
-      }
-    }
-
 
     @media print {
-      body {
-        background: #fff;
+      header, nav, #projeto, #saude, #guia, #pontos, #registros, #qrcode, footer, .hero-actions, .checklist-controls, main > section.card:not(#checklist) {
+        display: none !important;
       }
 
-      nav,
-      .button-row,
-      footer {
-        display: none;
-      }
+      body { background: white; color: #111827; }
+      main { padding: 0; max-width: 100%; }
+      #checklist { box-shadow: none; border: none; margin: 0; padding: 0; }
+      #print-summary { display: block !important; page-break-before: avoid; }
+      .check-item { border: 1px solid #d1d5db; background: white; }
+      .section-title { color: #111827; }
+    }
 
-      .page {
-        width: 100%;
-      }
+    @media (max-width: 900px) {
+      .col-4, .col-6, .col-8 { grid-column: span 12; }
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+      .qr-card { grid-template-columns: 1fr; }
+      .qr-placeholder { width: 100%; max-width: 260px; height: 220px; }
+    }
 
-      .hero,
-      .section-card {
-        box-shadow: none;
-      }
-
-      .section-card {
-        break-inside: avoid;
-      }
+    @media (max-width: 560px) {
+      header { padding: 54px 16px 42px; }
+      .card { padding: 20px; }
+      .gallery { grid-template-columns: 1fr; }
+      figure img { height: 260px; }
+      .waste-table { font-size: 0.92rem; }
+      .waste-table th, .waste-table td { padding: 11px; }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <div class="hero">
-        <div class="hero-content">
-          <div>
-            <div class="tag">⚡ Projeto de Extensão • Economia Sustentável</div>
-            <h1>Checklist Digital de Consumo Consciente de Energia</h1>
-            <p>
-              Uma orientação simples e visual para reduzir desperdícios no uso de equipamentos tecnológicos e elétricos em residências, home office e pequenos espaços de trabalho.
-            </p>
-          </div>
-          <aside class="hero-card">
-            <strong>Objetivo:</strong>
-            <p>Transformar pequenos hábitos em uma rotina mais consciente.</p>
-            <ul>
-              <li>Retirar carregadores da tomada.</li>
-              <li>Evitar aparelhos em stand-by.</li>
-              <li>Desligar equipamentos após o uso.</li>
-              <li>Usar tecnologia com responsabilidade.</li>
-            </ul>
-          </aside>
-        </div>
-      </div>
-
-      <nav aria-label="Navegação da página">
-        <a href="#sobre">Sobre</a>
-        <a href="#ods">ODS</a>
-        <a href="#boas-praticas">Boas práticas</a>
-        <a href="#checklist">Checklist</a>
-        <a href="#intervencao">Aplicação</a>
-        <a href="#registros">Registros</a>
-        <a href="#fontes">Fontes</a>
-      </nav>
-    </header>
-
-    <main>
-      <section id="sobre" class="section-card">
-        <div class="section-title">
-          <div class="icon">🏠</div>
-          <h2>Sobre o projeto</h2>
-        </div>
-        <p class="lead">
-          Esta página foi criada como parte de um projeto de extensão voltado ao consumo consciente de energia no uso de equipamentos tecnológicos em ambiente doméstico e de home office.
-        </p>
-        <div class="grid">
-          <article class="info-card">
-            <div class="mini">🔎</div>
-            <h3>Problema observado</h3>
-            <p>Carregadores conectados sem uso, aparelhos em stand-by e equipamentos ligados por longos períodos.</p>
-          </article>
-          <article class="info-card">
-            <div class="mini">👥</div>
-            <h3>Público-alvo</h3>
-            <p>Moradores e usuários de equipamentos eletrônicos em ambientes domésticos, home office, estudo e pequenas áreas de trabalho.</p>
-          </article>
-          <article class="info-card">
-            <div class="mini">✅</div>
-            <h3>Solução proposta</h3>
-            <p>Checklist digital, orientação aos moradores e lembretes visuais nos pontos de maior uso de energia.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="ods" class="section-card">
-        <div class="section-title">
-          <div class="icon">🌱</div>
-          <h2>Relação com os ODS</h2>
-        </div>
-        <p class="lead">
-          Este projeto se relaciona com a ODS 12 e a ODS 7 ao incentivar o consumo responsável e o uso consciente da energia no dia a dia.
-        </p>
-        <div class="ods-wrap">
-          <article class="ods ods-12">
-            <strong>ODS 12</strong>
-            <p>Consumo e Produção Responsáveis: incentiva padrões sustentáveis de consumo e redução de desperdícios.</p>
-            <span>12</span>
-          </article>
-          <article class="ods ods-7">
-            <strong>ODS 7</strong>
-            <p>Energia Limpa e Acessível: reforça a importância do uso responsável e eficiente da energia.</p>
-            <span>7</span>
-          </article>
-        </div>
-      </section>
-
-      <section id="boas-praticas" class="section-card">
-        <div class="section-title">
-          <div class="icon">💡</div>
-          <h2>Boas práticas para economizar energia</h2>
-        </div>
-        <p class="lead">
-          A proposta não é deixar de usar tecnologia, mas usar os equipamentos de forma mais consciente, segura e responsável.
-        </p>
-        <div class="grid">
-          <article class="info-card">
-            <div class="mini">🔌</div>
-            <h3>Carregadores</h3>
-            <p>Retire da tomada quando o celular, notebook ou outro aparelho terminar de carregar.</p>
-          </article>
-          <article class="info-card">
-            <div class="mini">📺</div>
-            <h3>Stand-by</h3>
-            <p>Evite deixar televisão, monitor, micro-ondas e outros aparelhos em espera por longos períodos.</p>
-          </article>
-          <article class="info-card">
-            <div class="mini">💻</div>
-            <h3>Home office</h3>
-            <p>Ao finalizar o trabalho, desligue notebook, monitor, carregadores e equipamentos auxiliares.</p>
-          </article>
-          <article class="info-card">
-            <div class="mini">🧰</div>
-            <h3>Equipamentos</h3>
-            <p>Desligue ferramentas e equipamentos elétricos após o uso, sem atrapalhar a rotina de trabalho.</p>
-          </article>
-          <article class="info-card">
-            <div class="mini">🌙</div>
-            <h3>Antes de dormir</h3>
-            <p>Faça uma verificação rápida dos aparelhos conectados antes de dormir ou sair de casa.</p>
-          </article>
-          <article class="info-card">
-            <div class="mini">🤝</div>
-            <h3>Participação</h3>
-            <p>Converse com os moradores para que todos mantenham os cuidados no dia a dia.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="checklist" class="section-card">
-        <div class="section-title">
-          <div class="icon">📋</div>
-          <h2>Checklist diário</h2>
-        </div>
-        <p class="lead">
-          Use este checklist antes de dormir, sair de casa ou finalizar o expediente em home office. As marcações ficam salvas no navegador.
-        </p>
-
-        <div class="progress-area" aria-live="polite">
-          <strong id="progressText">0 de 8 itens concluídos</strong>
-          <div class="progress-line">
-            <div class="progress-fill" id="progressFill"></div>
-          </div>
-        </div>
-
-        <div class="checklist" id="checklistItems">
-          <label class="check-item">
-            <input type="checkbox" />
-            <span>Retirei carregadores da tomada quando não estavam em uso.</span>
-          </label>
-          <label class="check-item">
-            <input type="checkbox" />
-            <span>Desliguei televisão, monitor ou notebook após o uso.</span>
-          </label>
-          <label class="check-item">
-            <input type="checkbox" />
-            <span>Evitei deixar aparelhos em stand-by sem necessidade.</span>
-          </label>
-          <label class="check-item">
-            <input type="checkbox" />
-            <span>Conferi se micro-ondas ou outros aparelhos estavam conectados sem uso imediato.</span>
-          </label>
-          <label class="check-item">
-            <input type="checkbox" />
-            <span>Organizei o uso dos equipamentos no home office.</span>
-          </label>
-          <label class="check-item">
-            <input type="checkbox" />
-            <span>Desliguei ferramentas ou equipamentos elétricos após o uso.</span>
-          </label>
-          <label class="check-item">
-            <input type="checkbox" />
-            <span>Verifiquei se havia algum aparelho ligado sem necessidade.</span>
-          </label>
-          <label class="check-item">
-            <input type="checkbox" />
-            <span>Orientei ou lembrei outro morador sobre o consumo consciente de energia.</span>
-          </label>
-        </div>
-
-        <div class="button-row">
-          <button class="btn-primary" type="button" onclick="resetChecklist()">↻ Limpar checklist</button>
-          <button class="btn-secondary" type="button" onclick="window.print()">🖨️ Imprimir página</button>
-        </div>
-      </section>
-
-      <section id="intervencao" class="section-card">
-        <div class="section-title">
-          <div class="icon">🚀</div>
-          <h2>Como aplicar?</h2>
-        </div>
-        <p class="lead">
-          Ajude a colocar o projeto em prática: acesse esta página, use o checklist no dia a dia e compartilhe os lembretes com os demais moradores.
-        </p>
-        <div class="steps">
-
-          <article class="step">
-            <div>
-              <h3>Compartilhe a página</h3>
-              <p>Envie o link por WhatsApp ou disponibilize um QR Code para acesso pelo celular.</p>
-            </div>
-          </article>
-          <article class="step">
-            <div>
-              <h3>Coloque lembretes visuais</h3>
-              <p>Use pequenos avisos próximos às tomadas, carregadores, televisão, home office e equipamentos da garagem.</p>
-            </div>
-          </article>
-        </div>
-
-        <div class="qr-box">
-  <img 
-    src="qrcode-checklist-energia.png" 
-    alt="QR Code para acessar o Checklist Digital de Consumo Consciente de Energia" 
-    class="qr-img" 
-  />
-
-  <div>
-    <h3>Acesse pelo QR Code</h3>
-    <p class="lead">
-      Aponte a câmera do celular para o QR Code e acesse o checklist digital do projeto.
-    </p>
-
-    <div class="button-row">
-      <a 
-        class="btn-link btn-primary" 
-        href="https://amandapardini-22.github.io/economia-sustentavel/" 
-        target="_blank" 
-        rel="noopener"
-      >
-        🔗 Abrir página
-      </a>
+  <header id="topo">
+    <span class="badge">Projeto acadêmico de extensão • Meio Ambiente e Saúde</span>
+    <h1>Guia Digital para Descarte Correto de Resíduos</h1>
+    <p>Orientações simples para separar, organizar e destinar corretamente os resíduos domésticos, reduzindo impactos ambientais e contribuindo para a saúde pública.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#guia">Ver guia de descarte</a>
+      <a class="btn btn-secondary" href="#checklist">Abrir checklist</a>
     </div>
-  </div>
-</div>
+  </header>
 
-      <section class="section-card">
-        <div class="section-title">
-          <div class="icon">🏷️</div>
-          <h2>Lembretes visuais</h2>
+  <nav aria-label="Navegação principal">
+    <div class="nav-inner">
+      <a href="#projeto">Projeto</a>
+      <a href="#saude">Meio ambiente e saúde</a>
+      <a href="#guia">Como separar</a>
+      <a href="#pontos">Onde descartar</a>
+      <a href="#checklist">Checklist</a>
+      <a href="#registros">Registros</a>
+      <a href="#qrcode">QR Code</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="projeto" class="card">
+      <h2 class="section-title">Sobre a intervenção</h2>
+      <p class="subtitle">Este guia foi criado para apoiar moradores na separação e destinação correta de resíduos domésticos, usando tecnologia simples e acessível.</p>
+      <div class="grid">
+        <div class="col-4">
+          <div class="info-box">
+            <h3>Objetivo</h3>
+            <p>Facilitar o acesso às informações sobre descarte correto por meio de uma página digital, QR Code, orientação presencial e sinalização no espaço de descarte.</p>
+          </div>
         </div>
-        <p class="lead">Você pode imprimir ou escrever estes lembretes e colocar nos pontos de maior uso de energia.</p>
-        <div class="reminders">
-          <div class="reminder"><small>Tomada</small><strong>Carregou? Retire da tomada.</strong></div>
-          <div class="reminder"><small>Televisão</small><strong>Vai sair? Desligue completamente.</strong></div>
-          <div class="reminder"><small>Home office</small><strong>Finalizou o trabalho? Desligue notebook, monitor e carregador.</strong></div>
-          <div class="reminder"><small>Garagem</small><strong>Usou o equipamento? Desligue após finalizar.</strong></div>
-          <div class="reminder"><small>Rotina</small><strong>Antes de dormir, confira os aparelhos conectados.</strong></div>
-          <div class="reminder"><small>Consciência</small><strong>Pequenos hábitos também economizam energia.</strong></div>
+        <div class="col-4">
+          <div class="info-box blue">
+            <h3>ODS relacionada</h3>
+            <p><strong>ODS 3 — Saúde e Bem-Estar</strong>, com foco em saúde pública, e <strong>ODS 12 — Consumo e Produção Responsáveis</strong>, com foco no descarte responsável.</p>
+          </div>
         </div>
-
-        <div class="reminder-download">
-          <a class="btn-link btn-primary" href="lembretes-visuais.pdf" target="_blank" rel="noopener">
-            📄 Abrir PDF para impressão
-          </a>
+        <div class="col-4">
+          <div class="info-box yellow">
+            <h3>Relação com ADS</h3>
+            <p>A intervenção utiliza uma solução digital simples em HTML, com organização de conteúdo, navegação, checklist e QR Code para ampliar o acesso da comunidade às informações.</p>
+          </div>
         </div>
-      </section>
-
-     <section id="registros" class="section-card">
-  <div class="section-title">
-    <div class="icon">📷</div>
-    <h2>Registros visuais</h2>
-  </div>
-
-  <p class="lead">
-    Nesta seção, são apresentados exemplos visuais de aplicação dos lembretes próximos aos pontos de maior uso de energia.
-  </p>
-
-    <article class="photo-box">
-      <img 
-        src="qrcode-intervencao.png" 
-        alt="QR Code da intervenção" 
-        class="photo-img" 
-      />
-      <div class="photo-content">
-        <h3>QR Code da página</h3>
-        <p>QR Code impresso para os moradores acessarem o checklist digital pelo celular.</p>
       </div>
-    </article>
+    </section>
 
-    <article class="photo-box">
-      <img 
-        src="Carregou-Retire-da-tomada.png" 
-        alt="Aviso visual próximo da tomada" 
-        class="photo-img" 
-      />
-      <div class="photo-content">
-        <h3>Exemplo de aviso próximo das tomadas</h3>
-        <p>Aviso visual colocado próximo às tomadas, carregadores e pontos de maior uso de energia.</p>
+    <section id="saude" class="card">
+      <h2 class="section-title">Por que descarte correto também é saúde pública?</h2>
+      <p>Quando os resíduos são misturados ou descartados em locais inadequados, podem causar mau cheiro, atrair insetos, dificultar a limpeza do espaço comum e prejudicar o reaproveitamento de materiais recicláveis. A separação correta ajuda a manter o ambiente mais limpo, organizado e seguro para todos.</p>
+      <div>
+        <span class="tag">Menos acúmulo</span>
+        <span class="tag">Menos mau cheiro</span>
+        <span class="tag">Mais organização</span>
+        <span class="tag">Mais reaproveitamento</span>
+        <span class="tag">Mais cuidado coletivo</span>
       </div>
-    </article>
+    </section>
 
-    <article class="photo-box">
-      <img 
-        src="uso-checklist.png" 
-        alt="Uso do checklist digital" 
-        class="photo-img" 
-      />
-      <div class="photo-content">
-        <h3>Uso do checklist</h3>
-        <p>Checklist sendo acessado e marcado, mostrando como a ferramenta é utilizada na rotina dos moradores.</p>
-      </div>
-    </article>
+    <section id="guia" class="card">
+      <h2 class="section-title">Como separar os resíduos</h2>
+      <p class="subtitle">Use esta tabela como referência rápida para decidir onde cada resíduo deve ir.</p>
+      <table class="waste-table" aria-label="Tabela de separação de resíduos">
+        <thead>
+          <tr>
+            <th>Categoria</th>
+            <th>Exemplos</th>
+            <th>Orientação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Recicláveis</strong></td>
+            <td>Papel, papelão, plástico, garrafas PET, latas, embalagens limpas e vidro.</td>
+            <td>Separar limpos e secos sempre que possível. Não misturar com restos de comida ou lixo de banheiro.</td>
+          </tr>
+          <tr>
+            <td><strong>Orgânicos</strong></td>
+            <td>Cascas de frutas, restos de alimentos, borra de café e resíduos de preparo de comida.</td>
+            <td>Descartar em saco separado e retirar com frequência para evitar mau cheiro e insetos.</td>
+          </tr>
+          <tr>
+            <td><strong>Rejeitos</strong></td>
+            <td>Papel higiênico, fraldas, absorventes, esponjas sujas, bitucas e resíduos sem possibilidade de reciclagem.</td>
+            <td>Separar do reciclável e manter bem fechado para preservar a higiene do ambiente.</td>
+          </tr>
+          <tr>
+            <td><strong>Resíduos especiais</strong></td>
+            <td>Pilhas, baterias, óleo de cozinha, lâmpadas, medicamentos vencidos, cabos e pequenos eletrônicos.</td>
+            <td>Não descartar no lixo comum. Pilhas e baterias poderão ser entregues à responsável pelo projeto, que fará o encaminhamento ao ponto de descarte existente em seu ambiente de trabalho. Óleo usado deve ser armazenado em garrafa fechada e levado a ponto de coleta. Medicamentos vencidos ou em desuso devem ser entregues em farmácias, drogarias com coletor ou UBS, nunca no lixo comum, pia ou vaso sanitário.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-    <article class="photo-box">
-      <img 
-        src="home-office.png" 
-        alt="Ambiente de home office organizado" 
-        class="photo-img" 
-      />
-      <div class="photo-content">
-        <h3>Ambiente de home office organizado</h3>
-        <p>Espaço utilizado para trabalho ou estudo, com notebook, monitor, carregador ou outros equipamentos organizados após o uso.</p>
-      </div>
-    </article>
-
-    <article class="photo-box">
-      <img 
-        src="Equipamento-desligado.png" 
-        alt="Equipamento desligado após o uso" 
-        class="photo-img" 
-      />
-      <div class="photo-content">
-        <h3>Equipamento desligado após o uso</h3>
-        <p>Televisão, monitor, notebook, carregador ou outro equipamento desligado após a utilização.</p>
-      </div>
-    </article>
-  </div>
-</section>
-
-      <section id="fontes" class="section-card">
-        <div class="section-title">
-          <div class="icon">📚</div>
-          <h2>Fontes de pesquisa</h2>
+    <section id="pontos" class="card">
+      <h2 class="section-title">Onde descartar corretamente em São Paulo</h2>
+      <p class="subtitle">Antes de sair, confirme horário, endereço e tipo de material aceito nos canais oficiais.</p>
+      <div class="grid">
+        <div class="col-6">
+          <div class="info-box">
+            <h3>Coleta seletiva</h3>
+            <p>Consulte os dias e horários da coleta seletiva no seu bairro. Separe recicláveis como papel, papelão, plástico, vidro e metal conforme a orientação municipal.</p>
+            <p><a href="https://www.reciclasampa.com.br/horarios-de-coleta" target="_blank" rel="noopener">Consultar horários de coleta — Recicla Sampa</a></p>
+          </div>
         </div>
-        <p class="lead">
-          Fontes utilizadas como apoio para o projeto de intervenção e para a relação com os Objetivos de Desenvolvimento Sustentável.
-        </p>
-        <div class="sources">
-          <a href="https://brasil.un.org/pt-br/sdgs/12" target="_blank" rel="noopener">ONU Brasil — ODS 12: Consumo e Produção Responsáveis</a>
-          <a href="https://brasil.un.org/pt-br/sdgs/7" target="_blank" rel="noopener">ONU Brasil — ODS 7: Energia Limpa e Acessível</a>
-          <a href="https://www.epe.gov.br/pt/abcdenergia/eficiencia-energetica" target="_blank" rel="noopener">EPE — Eficiência Energética</a>
-          <a href="https://www.gov.br/aneel/pt-br/assuntos/campanhas/consumo-consciente" target="_blank" rel="noopener">ANEEL — Consumo Consciente</a>
-          <a href="https://www.gov.br/mme/pt-br/assuntos/noticias/copy_of_Cartilhadoconsumidordeenergiaconsciente.pdf" target="_blank" rel="noopener">Ministério de Minas e Energia — Cartilha do Consumidor de Energia Consciente</a>
-          <a href="https://www.enel.com.br/pt/Para_Voce/dicas-de-economia.html" target="_blank" rel="noopener">Enel — Dicas de Economia</a>
+        <div class="col-6">
+          <div class="info-box blue">
+            <h3>Ecopontos</h3>
+            <p>Os Ecopontos recebem materiais como entulho em pequeno volume, grandes objetos, poda de árvore e recicláveis. Não são indicados para lixo orgânico ou hospitalar.</p>
+            <p><a href="https://coleta.prefeitura.sp.gov.br/" target="_blank" rel="noopener">Consultar orientações da Prefeitura de São Paulo</a></p>
+          </div>
         </div>
-      </section>
-    </main>
+        <div class="col-6">
+          <div class="info-box yellow">
+            <h3>Pilhas, baterias e eletrônicos</h3>
+            <p>Na comunidade, pilhas e baterias usadas poderão ser separadas e entregues à responsável pelo projeto, que fará a coleta sempre que esse material estiver disponível e levará ao ponto de descarte existente em seu ambiente de trabalho.</p>
+            <p>Para celulares, cabos, carregadores e pequenos eletrônicos, procure Pontos de Entrega Voluntária específicos. ABREE e Green Eletron ajudam a localizar pontos por CEP ou região.</p>
+            <p><a href="https://abree.org.br/pontos-de-recebimento" target="_blank" rel="noopener">Buscar pontos — ABREE</a></p>
+            <p><a href="https://greeneletron.org.br/blog/onde-descartar-pilhas-e-eletronicos-em-sao-paulo-sp/" target="_blank" rel="noopener">Orientações — Green Eletron</a></p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="info-box">
+            <h3>Óleo de cozinha, vidro e medicamentos</h3>
+            <p>O óleo usado deve ser armazenado frio em garrafa PET ou recipiente plástico bem fechado. Ele não deve ser jogado na pia, no ralo ou no lixo comum.</p>
+            <p><strong>Ponto de coleta de óleo na Zona Norte:</strong> Mercado Municipal Waldemar Costa Filho (Tucuruvi), Av. Nova Cantareira, 1686. Também há pontos em sacolões municipais e outros equipamentos públicos da cidade.</p>
+            <p><a href="https://prefeitura.sp.gov.br/web/seguranca_alimentar/w/confira-os-pontos-de-coleta-de-%C3%B3leo-usado-nos-equipamentos-de-seguran%C3%A7a-alimentar-e-nutricional-da-cidade" target="_blank" rel="noopener">Consultar pontos de coleta de óleo — Prefeitura de São Paulo</a></p>
+            <p><a href="https://www.oleosustentavel.org.br/pontos-de-entrega" target="_blank" rel="noopener">Buscar ponto próximo — Óleo Sustentável</a></p>
+            <p>Vidros devem ser embalados com cuidado. Medicamentos vencidos devem ser entregues em farmácias ou pontos autorizados.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <footer>
-      Projeto de Extensão EaD — Economia Sustentável • Consumo consciente de energia no uso de equipamentos tecnológicos
-    </footer>
-  </div>
+    <section id="checklist" class="card">
+      <h2 class="section-title">Checklist rápido para os moradores</h2>
+      <p class="subtitle">Marque os itens para conferir se o descarte está sendo feito corretamente.</p>
+      <div class="checklist" id="residue-checklist">
+        <label class="check-item"><input type="checkbox" /> Separei recicláveis limpos e secos em local próprio.</label>
+        <label class="check-item"><input type="checkbox" /> Separei orgânicos e rejeitos em recipientes diferentes.</label>
+        <label class="check-item"><input type="checkbox" /> Armazenei o óleo de cozinha usado em garrafa bem fechada para levar a um ponto de coleta.</label>
+        <label class="check-item"><input type="checkbox" /> Separei pilhas e baterias para entregar à responsável pelo projeto, que fará o encaminhamento ao descarte correto.</label>
+        <label class="check-item"><input type="checkbox" /> Evitei jogar vidro, eletrônicos ou outros resíduos especiais no lixo comum.</label>
+        <label class="check-item"><input type="checkbox" /> Consultei o guia ou o QR Code quando tive dúvida.</label>
+        <label class="check-item"><input type="checkbox" /> Verifiquei o dia/horário da coleta seletiva da região.</label>
+        <label class="check-item"><input type="checkbox" /> Mantive o espaço comum limpo e sem sacos misturados.</label>
+      </div>
+
+      <div class="checklist-controls" aria-label="Ações do checklist">
+        <label for="checklist-date">
+          Data em que o checklist foi realizado
+          <input type="date" id="checklist-date" />
+        </label>
+        <button type="button" class="action-btn print" id="print-checklist">Salvar para impressão</button>
+        <button type="button" class="action-btn clear" id="clear-checklist">Limpar marcações</button>
+      </div>
+
+      <div id="print-summary" aria-live="polite"></div>
+    </section>
+
+    <section id="registros" class="card">
+      <h2 class="section-title">Registros da intervenção</h2>
+      <p class="subtitle">As imagens mostram o diagnóstico do espaço, a organização dos recipientes e a orientação realizada com a comunidade.</p>
+      <div class="gallery">
+        <figure>
+          <img src="assets/ambiente-ficava-o-lixo-bagunçado.jpeg" alt="Espaço de descarte antes da organização" />
+          <figcaption>Antes: área de descarte com resíduos acumulados e sem organização clara.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/lixeira-desorganizada.jpeg" alt="Lixeira doméstica com resíduos misturados" />
+          <figcaption>Diagnóstico: resíduos misturados dificultavam a separação correta.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/ambiente-fica-o-lixo-organizado-com-etiquetas.jpeg" alt="Recipientes identificados para rejeitos, orgânicos e recicláveis" />
+          <figcaption>Depois: recipientes identificados para facilitar o descarte.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/ambiente-fica-o-lixo-organizado-e-comunidade.jpeg" alt="Moradores observando a organização dos recipientes" />
+          <figcaption>Orientação presencial com moradores no espaço comum.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/reciclaveis.jpeg" alt="Lixeira identificada para recicláveis" />
+          <figcaption>Recicláveis separados para evitar mistura com orgânicos e rejeitos.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/separacao-de-caixas-em-casa.jpeg" alt="Caixas separadas para reciclagem" />
+          <figcaption>Separação prévia de materiais recicláveis dentro da residência.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/ambiente-ficava-o-lixo-bagunçado-2.jpeg" alt="Espaço com recipientes antes da reorganização" />
+          <figcaption>Antes: necessidade de melhorar a disposição dos recipientes.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/reciclaveis-2.jpeg" alt="Lixeira de recicláveis identificada" />
+          <figcaption>Sinalização simples para reforçar as orientações do guia digital.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="qrcode" class="card">
+      <h2 class="section-title">Acesso por QR Code</h2>
+      <div class="qr-card">
+        <img class="qr-placeholder" src="assets/qrcode.png" alt="QR Code para acessar o Guia Digital para Descarte Correto de Resíduos" />
+        <div>
+          <h3>QR Code da página</h3>
+          <p>Este QR Code permite acessar rapidamente o guia digital pelo celular. A proposta é que ele seja disponibilizado próximo ao espaço de descarte, facilitando a consulta pelos moradores sempre que houver dúvidas sobre separação, organização e destinação correta dos resíduos.</p>
+          <p>Ao escanear o código, os participantes poderão visualizar orientações sobre recicláveis, orgânicos, rejeitos, óleo de cozinha, pilhas, baterias e outros resíduos que exigem cuidado especial. Dessa forma, o guia permanece disponível para consulta durante a rotina da comunidade, reforçando a intervenção presencial realizada no projeto.</p>
+          <p class="small">Link do guia: <strong>https://amandapardini-22.github.io/descarte-correto-de-residuos/</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">Conclusão</h2>
+      <p>Separar corretamente os resíduos é uma atitude simples, mas com impacto coletivo. Quando cada morador sabe onde descartar cada material, a comunidade fica mais limpa, organizada e consciente.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Projeto acadêmico de extensão — Meio Ambiente e Saúde</strong></p>
+    <p>Desenvolvido por Amanda Pardini — Curso de Análise e Desenvolvimento de Sistemas.</p>
+  </footer>
 
   <script>
-    const storageKey = "checklist-consumo-consciente-energia";
-    const checklist = document.querySelectorAll(".check-item input");
-    const progressText = document.getElementById("progressText");
-    const progressFill = document.getElementById("progressFill");
+    (function () {
+      const checklist = document.querySelectorAll('#residue-checklist input[type="checkbox"]');
+      const dateInput = document.getElementById('checklist-date');
+      const clearButton = document.getElementById('clear-checklist');
+      const printButton = document.getElementById('print-checklist');
+      const printSummary = document.getElementById('print-summary');
+      const storageKey = 'descarte-residuos-checklist';
+      const dateKey = 'descarte-residuos-checklist-data';
 
-    function saveChecklist() {
-      const values = Array.from(checklist).map((item) => item.checked);
-      localStorage.setItem(storageKey, JSON.stringify(values));
-    }
+      function todayISO() {
+        const now = new Date();
+        const offset = now.getTimezoneOffset();
+        const localDate = new Date(now.getTime() - offset * 60000);
+        return localDate.toISOString().split('T')[0];
+      }
 
-    function loadChecklist() {
-      const saved = JSON.parse(localStorage.getItem(storageKey) || "[]");
-      checklist.forEach((item, index) => {
-        item.checked = Boolean(saved[index]);
-        item.closest(".check-item").classList.toggle("checked", item.checked);
+      function formatDate(value) {
+        if (!value) return 'Data não informada';
+        const parts = value.split('-');
+        if (parts.length !== 3) return value;
+        return parts[2] + '/' + parts[1] + '/' + parts[0];
+      }
+
+      function saveState() {
+        const checked = Array.from(checklist).map(item => item.checked);
+        localStorage.setItem(storageKey, JSON.stringify(checked));
+        localStorage.setItem(dateKey, dateInput.value || '');
+      }
+
+      function loadState() {
+        const saved = localStorage.getItem(storageKey);
+        const savedDate = localStorage.getItem(dateKey);
+
+        if (saved) {
+          try {
+            const checked = JSON.parse(saved);
+            checklist.forEach((item, index) => {
+              item.checked = Boolean(checked[index]);
+            });
+          } catch (error) {
+            localStorage.removeItem(storageKey);
+          }
+        }
+
+        dateInput.value = savedDate || todayISO();
+      }
+
+      function buildPrintSummary() {
+        const items = Array.from(checklist).map((item) => {
+          const text = item.parentElement.textContent.trim();
+          return '<li>' + (item.checked ? '☑ ' : '☐ ') + text + '</li>';
+        }).join('');
+
+        printSummary.innerHTML = `
+          <h3>Registro do checklist de descarte correto de resíduos</h3>
+          <p><strong>Data de realização:</strong> ${formatDate(dateInput.value)}</p>
+          <p><strong>Projeto:</strong> Guia Digital para Descarte Correto de Resíduos</p>
+          <p><strong>Finalidade:</strong> registrar a verificação das práticas de separação, organização e descarte correto dos resíduos.</p>
+          <ol>${items}</ol>
+          <p><strong>Observação:</strong> este registro pode ser salvo em PDF pela opção de impressão do navegador.</p>
+        `;
+      }
+
+      checklist.forEach(item => item.addEventListener('change', saveState));
+      dateInput.addEventListener('change', saveState);
+
+      clearButton.addEventListener('click', function () {
+        checklist.forEach(item => item.checked = false);
+        dateInput.value = todayISO();
+        localStorage.removeItem(storageKey);
+        localStorage.setItem(dateKey, dateInput.value);
+        buildPrintSummary();
       });
-      updateProgress();
-    }
 
-    function updateProgress() {
-      const total = checklist.length;
-      const done = Array.from(checklist).filter((item) => item.checked).length;
-      const percent = Math.round((done / total) * 100);
-      progressText.textContent = `${done} de ${total} itens concluídos`;
-      progressFill.style.width = `${percent}%`;
-    }
-
-    function resetChecklist() {
-      checklist.forEach((item) => {
-        item.checked = false;
-        item.closest(".check-item").classList.remove("checked");
+      printButton.addEventListener('click', function () {
+        saveState();
+        buildPrintSummary();
+        window.print();
       });
-      saveChecklist();
-      updateProgress();
-    }
 
-    checklist.forEach((item) => {
-      item.addEventListener("change", () => {
-        item.closest(".check-item").classList.toggle("checked", item.checked);
-        saveChecklist();
-        updateProgress();
-      });
-    });
-
-    loadChecklist();
+      loadState();
+      buildPrintSummary();
+    })();
   </script>
+
 </body>
 </html>
