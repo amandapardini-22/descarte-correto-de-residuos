@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guia Digital para Descarte Correto de Resíduos</title>
+  <meta name="description" content="Guia digital acadêmico para orientar a separação e destinação correta de resíduos domésticos, relacionando meio ambiente e saúde pública." />
+  <style>
+    :root {
+      --green: #2e7d32;
+      --green-dark: #1b5e20;
+      --green-soft: #e8f5e9;
+      --blue: #1565c0;
+      --blue-soft: #e3f2fd;
+      --yellow: #f9a825;
+      --gray: #546e7a;
+      --light: #f7faf7;
+      --dark: #1f2933;
+      --white: #ffffff;
+      --radius: 20px;
+      --shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--dark);
+      background: var(--light);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, rgba(46,125,50,0.94), rgba(21,101,192,0.90)), url('assets/ambiente-fica-o-lixo-organizado-com-etiquetas.jpeg') center/cover;
+      color: var(--white);
+      padding: 72px 20px 54px;
+      text-align: center;
+    }
+
+    header .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      font-weight: 700;
+      margin-bottom: 16px;
+      font-size: 0.92rem;
+    }
+
+    h1 {
+      margin: 0 auto 14px;
+      max-width: 980px;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+    }
+
+    header p {
+      max-width: 850px;
+      margin: 0 auto 28px;
+      font-size: 1.12rem;
+      opacity: 0.96;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+    .btn-primary { background: var(--white); color: var(--green-dark); }
+    .btn-secondary { background: rgba(255,255,255,0.16); color: var(--white); border: 1px solid rgba(255,255,255,0.45); }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e5e7eb;
+      padding: 10px 16px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    nav .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      gap: 8px;
+    }
+
+    nav a {
+      color: var(--green-dark);
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    nav a:hover { background: var(--green-soft); }
+
+    main { max-width: 1120px; margin: 0 auto; padding: 34px 18px 70px; }
+    section { margin: 38px 0; }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(46,125,50,0.08);
+    }
+
+    .section-title {
+      color: var(--green-dark);
+      font-size: clamp(1.55rem, 3vw, 2.3rem);
+      line-height: 1.14;
+      margin: 0 0 14px;
+    }
+
+    .subtitle { color: var(--gray); margin-top: 0; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .col-4 { grid-column: span 4; }
+    .col-6 { grid-column: span 6; }
+    .col-8 { grid-column: span 8; }
+    .col-12 { grid-column: span 12; }
+
+    .info-box {
+      border-radius: 18px;
+      padding: 20px;
+      background: var(--green-soft);
+      border-left: 6px solid var(--green);
+      height: 100%;
+    }
+
+    .info-box.blue {
+      background: var(--blue-soft);
+      border-left-color: var(--blue);
+    }
+
+    .info-box.yellow {
+      background: #fff8e1;
+      border-left-color: var(--yellow);
+    }
+
+    .info-box h3 { margin-top: 0; color: var(--green-dark); }
+    .info-box.blue h3 { color: #0d47a1; }
+    .info-box.yellow h3 { color: #8a5a00; }
+
+    ul, ol { padding-left: 22px; }
+    li { margin-bottom: 7px; }
+
+    .waste-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 16px;
+      background: var(--white);
+    }
+
+    .waste-table th, .waste-table td {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .waste-table th {
+      background: var(--green-dark);
+      color: white;
+    }
+
+    .waste-table tr:last-child td { border-bottom: none; }
+
+    .checklist {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .check-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 12px 14px;
+    }
+
+    .check-item input { margin-top: 5px; transform: scale(1.15); }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    figure {
+      margin: 0;
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid #e5e7eb;
+    }
+
+    figure img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+    }
+
+    figcaption {
+      padding: 12px 14px;
+      font-size: 0.92rem;
+      color: var(--gray);
+    }
+
+    .qr-card {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 20px;
+      align-items: center;
+      background: #f8fafc;
+      border: 2px dashed #b0bec5;
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .qr-placeholder {
+      width: 180px;
+      height: 180px;
+      border-radius: 14px;
+      background: repeating-linear-gradient(45deg, #ffffff, #ffffff 10px, #edf2f7 10px, #edf2f7 20px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--gray);
+      font-weight: 800;
+      padding: 14px;
+      border: 1px solid #cfd8dc;
+    }
+
+    .small { font-size: 0.92rem; color: var(--gray); }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: var(--green-soft);
+      color: var(--green-dark);
+      font-weight: 800;
+      font-size: 0.86rem;
+      margin: 4px 5px 4px 0;
+    }
+
+    footer {
+      background: var(--green-dark);
+      color: white;
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    footer p { max-width: 900px; margin: 6px auto; }
+
+
+
+    .checklist-controls {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 12px;
+      align-items: end;
+      margin-top: 18px;
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .checklist-controls label {
+      font-weight: 700;
+      color: var(--green-dark);
+    }
+
+    .checklist-controls input[type="date"] {
+      width: 100%;
+      margin-top: 6px;
+      padding: 11px 12px;
+      border: 1px solid #cfd8dc;
+      border-radius: 10px;
+      font: inherit;
+      background: white;
+    }
+
+    .action-btn {
+      border: none;
+      cursor: pointer;
+      padding: 12px 14px;
+      border-radius: 12px;
+      font-weight: 800;
+      font: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .action-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+    .action-btn.print { background: var(--green); color: white; }
+    .action-btn.clear { background: #eceff1; color: var(--dark); }
+
+    #print-summary {
+      display: none;
+      margin-top: 20px;
+      border: 1px solid #cfd8dc;
+      border-radius: 14px;
+      padding: 16px;
+      background: white;
+    }
+
+    #print-summary h3 { margin-top: 0; color: var(--green-dark); }
+
+    @media (max-width: 700px) {
+      .checklist-controls { grid-template-columns: 1fr; }
+      .action-btn { width: 100%; }
+    }
+
+    @media print {
+      header, nav, #projeto, #saude, #guia, #pontos, #registros, #qrcode, footer, .hero-actions, .checklist-controls, main > section.card:not(#checklist) {
+        display: none !important;
+      }
+
+      body { background: white; color: #111827; }
+      main { padding: 0; max-width: 100%; }
+      #checklist { box-shadow: none; border: none; margin: 0; padding: 0; }
+      #print-summary { display: block !important; page-break-before: avoid; }
+      .check-item { border: 1px solid #d1d5db; background: white; }
+      .section-title { color: #111827; }
+    }
+
+    @media (max-width: 900px) {
+      .col-4, .col-6, .col-8 { grid-column: span 12; }
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+      .qr-card { grid-template-columns: 1fr; }
+      .qr-placeholder { width: 100%; max-width: 260px; height: 220px; }
+    }
+
+    @media (max-width: 560px) {
+      header { padding: 54px 16px 42px; }
+      .card { padding: 20px; }
+      .gallery { grid-template-columns: 1fr; }
+      figure img { height: 260px; }
+      .waste-table { font-size: 0.92rem; }
+      .waste-table th, .waste-table td { padding: 11px; }
+    }
+  </style>
+</head>
+<body>
+  <header id="topo">
+    <span class="badge">Projeto acadêmico de extensão • Meio Ambiente e Saúde</span>
+    <h1>Guia Digital para Descarte Correto de Resíduos</h1>
+    <p>Orientações simples para separar, organizar e destinar corretamente os resíduos domésticos, reduzindo impactos ambientais e contribuindo para a saúde pública.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#guia">Ver guia de descarte</a>
+      <a class="btn btn-secondary" href="#checklist">Abrir checklist</a>
+    </div>
+  </header>
+
+  <nav aria-label="Navegação principal">
+    <div class="nav-inner">
+      <a href="#projeto">Projeto</a>
+      <a href="#saude">Meio ambiente e saúde</a>
+      <a href="#guia">Como separar</a>
+      <a href="#pontos">Onde descartar</a>
+      <a href="#checklist">Checklist</a>
+      <a href="#registros">Registros</a>
+      <a href="#qrcode">QR Code</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="projeto" class="card">
+      <h2 class="section-title">Sobre a intervenção</h2>
+      <p class="subtitle">Este guia foi criado para apoiar moradores na separação e destinação correta de resíduos domésticos, usando tecnologia simples e acessível.</p>
+      <div class="grid">
+        <div class="col-4">
+          <div class="info-box">
+            <h3>Objetivo</h3>
+            <p>Facilitar o acesso às informações sobre descarte correto por meio de uma página digital, QR Code, orientação presencial e sinalização no espaço de descarte.</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="info-box blue">
+            <h3>ODS relacionada</h3>
+            <p><strong>ODS 3 — Saúde e Bem-Estar</strong>, com foco em saúde pública, e <strong>ODS 12 — Consumo e Produção Responsáveis</strong>, com foco no descarte responsável.</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="info-box yellow">
+            <h3>Relação com ADS</h3>
+            <p>A intervenção utiliza uma solução digital simples em HTML, com organização de conteúdo, navegação, checklist e QR Code para ampliar o acesso da comunidade às informações.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="saude" class="card">
+      <h2 class="section-title">Por que descarte correto também é saúde pública?</h2>
+      <p>Quando os resíduos são misturados ou descartados em locais inadequados, podem causar mau cheiro, atrair insetos, dificultar a limpeza do espaço comum e prejudicar o reaproveitamento de materiais recicláveis. A separação correta ajuda a manter o ambiente mais limpo, organizado e seguro para todos.</p>
+      <div>
+        <span class="tag">Menos acúmulo</span>
+        <span class="tag">Menos mau cheiro</span>
+        <span class="tag">Mais organização</span>
+        <span class="tag">Mais reaproveitamento</span>
+        <span class="tag">Mais cuidado coletivo</span>
+      </div>
+    </section>
+
+    <section id="guia" class="card">
+      <h2 class="section-title">Como separar os resíduos</h2>
+      <p class="subtitle">Use esta tabela como referência rápida para decidir onde cada resíduo deve ir.</p>
+      <table class="waste-table" aria-label="Tabela de separação de resíduos">
+        <thead>
+          <tr>
+            <th>Categoria</th>
+            <th>Exemplos</th>
+            <th>Orientação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Recicláveis</strong></td>
+            <td>Papel, papelão, plástico, garrafas PET, latas, embalagens limpas e vidro.</td>
+            <td>Separar limpos e secos sempre que possível. Não misturar com restos de comida ou lixo de banheiro.</td>
+          </tr>
+          <tr>
+            <td><strong>Orgânicos</strong></td>
+            <td>Cascas de frutas, restos de alimentos, borra de café e resíduos de preparo de comida.</td>
+            <td>Descartar em saco separado e retirar com frequência para evitar mau cheiro e insetos.</td>
+          </tr>
+          <tr>
+            <td><strong>Rejeitos</strong></td>
+            <td>Papel higiênico, fraldas, absorventes, esponjas sujas, bitucas e resíduos sem possibilidade de reciclagem.</td>
+            <td>Separar do reciclável e manter bem fechado para preservar a higiene do ambiente.</td>
+          </tr>
+          <tr>
+            <td><strong>Resíduos especiais</strong></td>
+            <td>Pilhas, baterias, óleo de cozinha, lâmpadas, medicamentos vencidos, cabos e pequenos eletrônicos.</td>
+            <td>Não descartar no lixo comum. Pilhas e baterias poderão ser entregues à responsável pelo projeto, que fará o encaminhamento ao ponto de descarte existente em seu ambiente de trabalho. Óleo de cozinha deve ser armazenado frio em garrafa bem fechada e levado a um ponto de coleta autorizado. Medicamentos vencidos ou em desuso não devem ser jogados no lixo comum, pia ou vaso sanitário; o descarte deve ser feito em farmácias, drogarias com coletor ou Unidades Básicas de Saúde — UBS.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="pontos" class="card">
+      <h2 class="section-title">Onde descartar corretamente em São Paulo</h2>
+      <p class="subtitle">Antes de sair, confirme horário, endereço e tipo de material aceito nos canais oficiais.</p>
+      <div class="grid">
+        <div class="col-6">
+          <div class="info-box">
+            <h3>Coleta seletiva</h3>
+            <p>Consulte os dias e horários da coleta seletiva no seu bairro. Separe recicláveis como papel, papelão, plástico, vidro e metal conforme a orientação municipal.</p>
+            <p><a href="https://www.reciclasampa.com.br/horarios-de-coleta" target="_blank" rel="noopener">Consultar horários de coleta — Recicla Sampa</a></p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="info-box blue">
+            <h3>Ecopontos</h3>
+            <p>Os Ecopontos recebem materiais como entulho em pequeno volume, grandes objetos, poda de árvore e recicláveis. Não são indicados para lixo orgânico ou hospitalar.</p>
+            <p><a href="https://coleta.prefeitura.sp.gov.br/" target="_blank" rel="noopener">Consultar orientações da Prefeitura de São Paulo</a></p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="info-box yellow">
+            <h3>Pilhas, baterias e eletrônicos</h3>
+            <p>Na comunidade, pilhas e baterias usadas poderão ser separadas e entregues à responsável pelo projeto, que fará a coleta sempre que esse material estiver disponível e levará ao ponto de descarte existente em seu ambiente de trabalho.</p>
+            <p>Para celulares, cabos, carregadores e pequenos eletrônicos, procure Pontos de Entrega Voluntária específicos. ABREE e Green Eletron ajudam a localizar pontos por CEP ou região.</p>
+            <p><a href="https://abree.org.br/pontos-de-recebimento" target="_blank" rel="noopener">Buscar pontos — ABREE</a></p>
+            <p><a href="https://greeneletron.org.br/blog/onde-descartar-pilhas-e-eletronicos-em-sao-paulo-sp/" target="_blank" rel="noopener">Orientações — Green Eletron</a></p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="info-box">
+            <h3>Óleo de cozinha, vidro e medicamentos</h3>
+            <p>O óleo usado deve ser armazenado frio em garrafa PET ou recipiente plástico bem fechado. Ele não deve ser jogado na pia, no ralo ou no lixo comum.</p>
+            <p><strong>Ponto de coleta de óleo na Zona Norte:</strong> Mercado Municipal Waldemar Costa Filho (Tucuruvi), Av. Nova Cantareira, 1686. Também há pontos em sacolões municipais e outros equipamentos públicos da cidade.</p>
+            <p><a href="https://prefeitura.sp.gov.br/web/seguranca_alimentar/w/confira-os-pontos-de-coleta-de-%C3%B3leo-usado-nos-equipamentos-de-seguran%C3%A7a-alimentar-e-nutricional-da-cidade" target="_blank" rel="noopener">Consultar pontos de coleta de óleo — Prefeitura de São Paulo</a></p>
+            <p><a href="https://www.oleosustentavel.org.br/pontos-de-entrega" target="_blank" rel="noopener">Buscar ponto próximo — Óleo Sustentável</a></p>
+            <p>Vidros devem ser embalados com cuidado. Medicamentos vencidos devem ser entregues em farmácias ou pontos autorizados.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="checklist" class="card">
+      <h2 class="section-title">Checklist rápido para os moradores</h2>
+      <p class="subtitle">Marque os itens para conferir se o descarte está sendo feito corretamente.</p>
+      <div class="checklist" id="residue-checklist">
+        <label class="check-item"><input type="checkbox" /> Separei recicláveis limpos e secos em local próprio.</label>
+        <label class="check-item"><input type="checkbox" /> Separei orgânicos e rejeitos em recipientes diferentes.</label>
+        <label class="check-item"><input type="checkbox" /> Armazenei o óleo de cozinha usado em garrafa bem fechada para levar a um ponto de coleta.</label>
+        <label class="check-item"><input type="checkbox" /> Separei pilhas e baterias para entregar à responsável pelo projeto, que fará o encaminhamento ao descarte correto.</label>
+        <label class="check-item"><input type="checkbox" /> Evitei jogar vidro, eletrônicos ou outros resíduos especiais no lixo comum.</label>
+        <label class="check-item"><input type="checkbox" /> Consultei o guia ou o QR Code quando tive dúvida.</label>
+        <label class="check-item"><input type="checkbox" /> Verifiquei o dia/horário da coleta seletiva da região.</label>
+        <label class="check-item"><input type="checkbox" /> Mantive o espaço comum limpo e sem sacos misturados.</label>
+      </div>
+
+      <div class="checklist-controls" aria-label="Ações do checklist">
+        <label for="checklist-date">
+          Data em que o checklist foi realizado
+          <input type="date" id="checklist-date" />
+        </label>
+        <button type="button" class="action-btn print" id="print-checklist">Salvar para impressão</button>
+        <button type="button" class="action-btn clear" id="clear-checklist">Limpar marcações</button>
+      </div>
+
+      <div id="print-summary" aria-live="polite"></div>
+    </section>
+
+    <section id="registros" class="card">
+      <h2 class="section-title">Registros da intervenção</h2>
+      <p class="subtitle">As imagens mostram o diagnóstico do espaço, a organização dos recipientes e a orientação realizada com a comunidade.</p>
+      <div class="gallery">
+        <figure>
+          <img src="assets/ambiente-ficava-o-lixo-bagunçado.jpeg" alt="Espaço de descarte antes da organização" />
+          <figcaption>Antes: área de descarte com resíduos acumulados e sem organização clara.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/lixeira-desorganizada.jpeg" alt="Lixeira doméstica com resíduos misturados" />
+          <figcaption>Diagnóstico: resíduos misturados dificultavam a separação correta.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/ambiente-fica-o-lixo-organizado-com-etiquetas.jpeg" alt="Recipientes identificados para rejeitos, orgânicos e recicláveis" />
+          <figcaption>Depois: recipientes identificados para facilitar o descarte.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/ambiente-fica-o-lixo-organizado-e-comunidade.jpeg" alt="Moradores observando a organização dos recipientes" />
+          <figcaption>Orientação presencial com moradores no espaço comum.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/reciclaveis.jpeg" alt="Lixeira identificada para recicláveis" />
+          <figcaption>Recicláveis separados para evitar mistura com orgânicos e rejeitos.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/separacao-de-caixas-em-casa.jpeg" alt="Caixas separadas para reciclagem" />
+          <figcaption>Separação prévia de materiais recicláveis dentro da residência.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/ambiente-ficava-o-lixo-bagunçado-2.jpeg" alt="Espaço com recipientes antes da reorganização" />
+          <figcaption>Antes: necessidade de melhorar a disposição dos recipientes.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/reciclaveis-2.jpeg" alt="Lixeira de recicláveis identificada" />
+          <figcaption>Sinalização simples para reforçar as orientações do guia digital.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="qrcode" class="card">
+      <h2 class="section-title">Acesso por QR Code</h2>
+      <div class="qr-card">
+        <div class="qr-placeholder">QR Code da página<br />será inserido aqui</div>
+        <div>
+          <h3>QR Code da página</h3>
+          <p>Este QR Code permite acessar rapidamente o guia digital pelo celular. A proposta é que ele seja disponibilizado próximo ao espaço de descarte, facilitando a consulta pelos moradores sempre que houver dúvidas sobre separação, organização e destinação correta dos resíduos.</p>
+          <p>Ao escanear o código, os participantes poderão visualizar orientações sobre recicláveis, orgânicos, rejeitos, óleo de cozinha, pilhas, baterias e outros resíduos que exigem cuidado especial. Dessa forma, o guia permanece disponível para consulta durante a rotina da comunidade, reforçando a intervenção presencial realizada no projeto.</p>
+          <p class="small">Sugestão: salve a imagem do QR Code como <strong>assets/qrcode.png</strong> e troque o bloco acima por uma imagem no HTML.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">Conclusão</h2>
+      <p>Separar corretamente os resíduos é uma atitude simples, mas com impacto coletivo. Quando cada morador sabe onde descartar cada material, a comunidade fica mais limpa, organizada e consciente.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Projeto acadêmico de extensão — Meio Ambiente e Saúde</strong></p>
+    <p>Desenvolvido por Amanda Pardini — Curso de Análise e Desenvolvimento de Sistemas.</p>
+  </footer>
+
+  <script>
+    (function () {
+      const checklist = document.querySelectorAll('#residue-checklist input[type="checkbox"]');
+      const dateInput = document.getElementById('checklist-date');
+      const clearButton = document.getElementById('clear-checklist');
+      const printButton = document.getElementById('print-checklist');
+      const printSummary = document.getElementById('print-summary');
+      const storageKey = 'descarte-residuos-checklist';
+      const dateKey = 'descarte-residuos-checklist-data';
+
+      function todayISO() {
+        const now = new Date();
+        const offset = now.getTimezoneOffset();
+        const localDate = new Date(now.getTime() - offset * 60000);
+        return localDate.toISOString().split('T')[0];
+      }
+
+      function formatDate(value) {
+        if (!value) return 'Data não informada';
+        const parts = value.split('-');
+        if (parts.length !== 3) return value;
+        return parts[2] + '/' + parts[1] + '/' + parts[0];
+      }
+
+      function saveState() {
+        const checked = Array.from(checklist).map(item => item.checked);
+        localStorage.setItem(storageKey, JSON.stringify(checked));
+        localStorage.setItem(dateKey, dateInput.value || '');
+      }
+
+      function loadState() {
+        const saved = localStorage.getItem(storageKey);
+        const savedDate = localStorage.getItem(dateKey);
+
+        if (saved) {
+          try {
+            const checked = JSON.parse(saved);
+            checklist.forEach((item, index) => {
+              item.checked = Boolean(checked[index]);
+            });
+          } catch (error) {
+            localStorage.removeItem(storageKey);
+          }
+        }
+
+        dateInput.value = savedDate || todayISO();
+      }
+
+      function buildPrintSummary() {
+        const items = Array.from(checklist).map((item) => {
+          const text = item.parentElement.textContent.trim();
+          return '<li>' + (item.checked ? '☑ ' : '☐ ') + text + '</li>';
+        }).join('');
+
+        printSummary.innerHTML = `
+          <h3>Registro do checklist de descarte correto de resíduos</h3>
+          <p><strong>Data de realização:</strong> ${formatDate(dateInput.value)}</p>
+          <p><strong>Projeto:</strong> Guia Digital para Descarte Correto de Resíduos</p>
+          <p><strong>Finalidade:</strong> registrar a verificação das práticas de separação, organização e descarte correto dos resíduos.</p>
+          <ol>${items}</ol>
+          <p><strong>Observação:</strong> este registro pode ser salvo em PDF pela opção de impressão do navegador.</p>
+        `;
+      }
+
+      checklist.forEach(item => item.addEventListener('change', saveState));
+      dateInput.addEventListener('change', saveState);
+
+      clearButton.addEventListener('click', function () {
+        checklist.forEach(item => item.checked = false);
+        dateInput.value = todayISO();
+        localStorage.removeItem(storageKey);
+        localStorage.setItem(dateKey, dateInput.value);
+        buildPrintSummary();
+      });
+
+      printButton.addEventListener('click', function () {
+        saveState();
+        buildPrintSummary();
+        window.print();
+      });
+
+      loadState();
+      buildPrintSummary();
+    })();
+  </script>
+
+</body>
+</html>
