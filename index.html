@@ -288,78 +288,6 @@
 
     footer p { max-width: 900px; margin: 6px auto; }
 
-
-
-    .checklist-controls {
-      display: grid;
-      grid-template-columns: 1fr auto auto;
-      gap: 12px;
-      align-items: end;
-      margin-top: 18px;
-      background: #f8fafc;
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
-      padding: 14px;
-    }
-
-    .checklist-controls label {
-      font-weight: 700;
-      color: var(--green-dark);
-    }
-
-    .checklist-controls input[type="date"] {
-      width: 100%;
-      margin-top: 6px;
-      padding: 11px 12px;
-      border: 1px solid #cfd8dc;
-      border-radius: 10px;
-      font: inherit;
-      background: white;
-    }
-
-    .action-btn {
-      border: none;
-      cursor: pointer;
-      padding: 12px 14px;
-      border-radius: 12px;
-      font-weight: 800;
-      font: inherit;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .action-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
-    .action-btn.print { background: var(--green); color: white; }
-    .action-btn.clear { background: #eceff1; color: var(--dark); }
-
-    #print-summary {
-      display: none;
-      margin-top: 20px;
-      border: 1px solid #cfd8dc;
-      border-radius: 14px;
-      padding: 16px;
-      background: white;
-    }
-
-    #print-summary h3 { margin-top: 0; color: var(--green-dark); }
-
-    @media (max-width: 700px) {
-      .checklist-controls { grid-template-columns: 1fr; }
-      .action-btn { width: 100%; }
-    }
-
-    @media print {
-      header, nav, #projeto, #saude, #guia, #pontos, #registros, #qrcode, footer, .hero-actions, .checklist-controls, main > section.card:not(#checklist) {
-        display: none !important;
-      }
-
-      body { background: white; color: #111827; }
-      main { padding: 0; max-width: 100%; }
-      #checklist { box-shadow: none; border: none; margin: 0; padding: 0; }
-      #print-summary { display: block !important; page-break-before: avoid; }
-      .check-item { border: 1px solid #d1d5db; background: white; }
-      .section-title { color: #111827; }
-    }
-
     @media (max-width: 900px) {
       .col-4, .col-6, .col-8 { grid-column: span 12; }
       .gallery { grid-template-columns: repeat(2, 1fr); }
@@ -414,7 +342,7 @@
         <div class="col-4">
           <div class="info-box blue">
             <h3>ODS relacionada</h3>
-            <p><strong>ODS 3 — Saúde e Bem-Estar</strong>, com foco em saúde pública, e <strong>ODS 12 — Consumo e Produção Responsáveis</strong>, com foco no descarte responsável.</p>
+            <p><strong>ODS 3 — Saúde e Bem-Estar</strong>, com foco em saúde pública, e <strong>ODS 15 — Vida Terrestre</strong>, com foco na redução de impactos ambientais e na proteção do solo e do ambiente.</p>
           </div>
         </div>
         <div class="col-4">
@@ -468,7 +396,7 @@
           <tr>
             <td><strong>Resíduos especiais</strong></td>
             <td>Pilhas, baterias, óleo de cozinha, lâmpadas, medicamentos vencidos, cabos e pequenos eletrônicos.</td>
-            <td>Pilhas, baterias, óleo usado e medicamentos vencidos não devem ir ao lixo comum. Pilhas e baterias podem ser entregues à responsável pelo projeto; óleo usado deve ir em garrafa fechada a ponto de coleta; medicamentos devem ser entregues em farmácias, drogarias com coletor ou UBS.</td>
+            <td>Não descartar no lixo comum. Procurar pontos de entrega voluntária, estabelecimentos participantes ou serviços indicados pela prefeitura e entidades responsáveis.</td>
           </tr>
         </tbody>
       </table>
@@ -495,8 +423,7 @@
         <div class="col-6">
           <div class="info-box yellow">
             <h3>Pilhas, baterias e eletrônicos</h3>
-            <p>Na comunidade, pilhas e baterias usadas poderão ser separadas e entregues à responsável pelo projeto, que fará a coleta sempre que esse material estiver disponível e levará ao ponto de descarte existente em seu ambiente de trabalho.</p>
-            <p>Para celulares, cabos, carregadores e pequenos eletrônicos, procure Pontos de Entrega Voluntária específicos. ABREE e Green Eletron ajudam a localizar pontos por CEP ou região.</p>
+            <p>Para pilhas, baterias, celulares, cabos e eletrônicos, procure Pontos de Entrega Voluntária específicos. ABREE e Green Eletron ajudam a localizar pontos por CEP ou região.</p>
             <p><a href="https://abree.org.br/pontos-de-recebimento" target="_blank" rel="noopener">Buscar pontos — ABREE</a></p>
             <p><a href="https://greeneletron.org.br/blog/onde-descartar-pilhas-e-eletronicos-em-sao-paulo-sp/" target="_blank" rel="noopener">Orientações — Green Eletron</a></p>
           </div>
@@ -504,11 +431,8 @@
         <div class="col-6">
           <div class="info-box">
             <h3>Óleo de cozinha, vidro e medicamentos</h3>
-            <p>O óleo usado deve ser armazenado frio em garrafa PET ou recipiente plástico bem fechado. Ele não deve ser jogado na pia, no ralo ou no lixo comum.</p>
-            <p><strong>Ponto de coleta de óleo na Zona Norte:</strong> Mercado Municipal Waldemar Costa Filho (Tucuruvi), Av. Nova Cantareira, 1686. Também há pontos em sacolões municipais e outros equipamentos públicos da cidade.</p>
-            <p><a href="https://prefeitura.sp.gov.br/web/seguranca_alimentar/w/confira-os-pontos-de-coleta-de-%C3%B3leo-usado-nos-equipamentos-de-seguran%C3%A7a-alimentar-e-nutricional-da-cidade" target="_blank" rel="noopener">Consultar pontos de coleta de óleo — Prefeitura de São Paulo</a></p>
-            <p><a href="https://www.oleosustentavel.org.br/pontos-de-entrega" target="_blank" rel="noopener">Buscar ponto próximo — Óleo Sustentável</a></p>
-            <p>Vidros devem ser embalados com cuidado. Medicamentos vencidos devem ser entregues em farmácias ou pontos autorizados.</p>
+            <p>O óleo usado deve ser armazenado em garrafa fechada e levado a ponto de coleta. Vidros devem ser embalados com cuidado. Medicamentos vencidos devem ser entregues em farmácias ou pontos autorizados.</p>
+            <p class="small">Dica: anote os pontos próximos à comunidade e compartilhe no grupo dos moradores.</p>
           </div>
         </div>
       </div>
@@ -517,27 +441,14 @@
     <section id="checklist" class="card">
       <h2 class="section-title">Checklist rápido para os moradores</h2>
       <p class="subtitle">Marque os itens para conferir se o descarte está sendo feito corretamente.</p>
-      <div class="checklist" id="residue-checklist">
+      <div class="checklist">
         <label class="check-item"><input type="checkbox" /> Separei recicláveis limpos e secos em local próprio.</label>
         <label class="check-item"><input type="checkbox" /> Separei orgânicos e rejeitos em recipientes diferentes.</label>
-        <label class="check-item"><input type="checkbox" /> Armazenei o óleo de cozinha usado em garrafa bem fechada para levar a um ponto de coleta.</label>
-        <label class="check-item"><input type="checkbox" /> Separei pilhas e baterias para entregar à responsável pelo projeto, que fará o encaminhamento ao descarte correto.</label>
-        <label class="check-item"><input type="checkbox" /> Evitei jogar vidro, eletrônicos ou outros resíduos especiais no lixo comum.</label>
+        <label class="check-item"><input type="checkbox" /> Evitei jogar pilhas, baterias, óleo, vidro ou eletrônicos no lixo comum.</label>
         <label class="check-item"><input type="checkbox" /> Consultei o guia ou o QR Code quando tive dúvida.</label>
         <label class="check-item"><input type="checkbox" /> Verifiquei o dia/horário da coleta seletiva da região.</label>
         <label class="check-item"><input type="checkbox" /> Mantive o espaço comum limpo e sem sacos misturados.</label>
       </div>
-
-      <div class="checklist-controls" aria-label="Ações do checklist">
-        <label for="checklist-date">
-          Data em que o checklist foi realizado
-          <input type="date" id="checklist-date" />
-        </label>
-        <button type="button" class="action-btn print" id="print-checklist">Salvar para impressão</button>
-        <button type="button" class="action-btn clear" id="clear-checklist">Limpar marcações</button>
-      </div>
-
-      <div id="print-summary" aria-live="polite"></div>
     </section>
 
     <section id="registros" class="card">
@@ -582,18 +493,17 @@
     <section id="qrcode" class="card">
       <h2 class="section-title">Acesso por QR Code</h2>
       <div class="qr-card">
-        <img class="qr-placeholder" src="assets/qrcode.png" alt="QR Code para acessar o Guia Digital para Descarte Correto de Resíduos" />
+        <div class="qr-placeholder">QR Code da página<br />será inserido aqui</div>
         <div>
-          <h3>QR Code da página</h3>
-          <p>Este QR Code permite acessar rapidamente o guia digital pelo celular. A proposta é que ele seja disponibilizado próximo ao espaço de descarte, facilitando a consulta pelos moradores sempre que houver dúvidas sobre separação, organização e destinação correta dos resíduos.</p>
-          <p>Ao escanear o código, os participantes poderão visualizar orientações sobre recicláveis, orgânicos, rejeitos, óleo de cozinha, pilhas, baterias e outros resíduos que exigem cuidado especial. Dessa forma, o guia permanece disponível para consulta durante a rotina da comunidade, reforçando a intervenção presencial realizada no projeto.</p>
-          <p class="small">Link do guia: <strong>https://amandapardini-22.github.io/descarte-correto-de-residuos/</strong></p>
+          <h3>Como usar na intervenção</h3>
+          <p>Após publicar esta página no GitHub Pages, gere o QR Code com o link final e substitua este espaço pela imagem do QR Code. O ideal é imprimir o código e fixar próximo ao espaço de descarte, para que os moradores possam consultar o guia pelo celular.</p>
+          <p class="small">Sugestão: salve a imagem do QR Code como <strong>assets/qrcode.png</strong> e troque o bloco acima por uma imagem no HTML.</p>
         </div>
       </div>
     </section>
 
     <section class="card">
-      <h2 class="section-title">Conclusão</h2>
+      <h2 class="section-title">Mensagem final</h2>
       <p>Separar corretamente os resíduos é uma atitude simples, mas com impacto coletivo. Quando cada morador sabe onde descartar cada material, a comunidade fica mais limpa, organizada e consciente.</p>
     </section>
   </main>
@@ -602,92 +512,5 @@
     <p><strong>Projeto acadêmico de extensão — Meio Ambiente e Saúde</strong></p>
     <p>Desenvolvido por Amanda Pardini — Curso de Análise e Desenvolvimento de Sistemas.</p>
   </footer>
-
-  <script>
-    (function () {
-      const checklist = document.querySelectorAll('#residue-checklist input[type="checkbox"]');
-      const dateInput = document.getElementById('checklist-date');
-      const clearButton = document.getElementById('clear-checklist');
-      const printButton = document.getElementById('print-checklist');
-      const printSummary = document.getElementById('print-summary');
-      const storageKey = 'descarte-residuos-checklist';
-      const dateKey = 'descarte-residuos-checklist-data';
-
-      function todayISO() {
-        const now = new Date();
-        const offset = now.getTimezoneOffset();
-        const localDate = new Date(now.getTime() - offset * 60000);
-        return localDate.toISOString().split('T')[0];
-      }
-
-      function formatDate(value) {
-        if (!value) return 'Data não informada';
-        const parts = value.split('-');
-        if (parts.length !== 3) return value;
-        return parts[2] + '/' + parts[1] + '/' + parts[0];
-      }
-
-      function saveState() {
-        const checked = Array.from(checklist).map(item => item.checked);
-        localStorage.setItem(storageKey, JSON.stringify(checked));
-        localStorage.setItem(dateKey, dateInput.value || '');
-      }
-
-      function loadState() {
-        const saved = localStorage.getItem(storageKey);
-        const savedDate = localStorage.getItem(dateKey);
-
-        if (saved) {
-          try {
-            const checked = JSON.parse(saved);
-            checklist.forEach((item, index) => {
-              item.checked = Boolean(checked[index]);
-            });
-          } catch (error) {
-            localStorage.removeItem(storageKey);
-          }
-        }
-
-        dateInput.value = savedDate || todayISO();
-      }
-
-      function buildPrintSummary() {
-        const items = Array.from(checklist).map((item) => {
-          const text = item.parentElement.textContent.trim();
-          return '<li>' + (item.checked ? '☑ ' : '☐ ') + text + '</li>';
-        }).join('');
-
-        printSummary.innerHTML = `
-          <h3>Registro do checklist de descarte correto de resíduos</h3>
-          <p><strong>Data de realização:</strong> ${formatDate(dateInput.value)}</p>
-          <p><strong>Projeto:</strong> Guia Digital para Descarte Correto de Resíduos</p>
-          <p><strong>Finalidade:</strong> registrar a verificação das práticas de separação, organização e descarte correto dos resíduos.</p>
-          <ol>${items}</ol>
-          <p><strong>Observação:</strong> este registro pode ser salvo em PDF pela opção de impressão do navegador.</p>
-        `;
-      }
-
-      checklist.forEach(item => item.addEventListener('change', saveState));
-      dateInput.addEventListener('change', saveState);
-
-      clearButton.addEventListener('click', function () {
-        checklist.forEach(item => item.checked = false);
-        dateInput.value = todayISO();
-        localStorage.removeItem(storageKey);
-        localStorage.setItem(dateKey, dateInput.value);
-        buildPrintSummary();
-      });
-
-      printButton.addEventListener('click', function () {
-        saveState();
-        buildPrintSummary();
-        window.print();
-      });
-
-      loadState();
-      buildPrintSummary();
-    })();
-  </script>
-
 </body>
 </html>
