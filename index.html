@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Guia comunitário de descarte de resíduos: calendário da coleta comum e seletiva, Cata-Bagulho e orientações de saúde ambiental.">
+    <meta name="theme-color" content="#143a31">
+    <title>Descarte Consciente | Guia da comunidade</title>
+    <link rel="icon" href="assets/illustrations/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header">
+      <div class="wrap topbar">
+        <a href="#inicio" class="brand"><span class="brand-icon" aria-hidden="true">♻</span><span>Descarte Consciente<small>Guia da comunidade</small></span></a>
+        <button type="button" id="menuBtn" class="menu-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+        <nav class="nav" id="nav" aria-label="Navegação principal"><a href="#calendario">Calendário</a><a href="#separar">Como separar</a><a href="#rotina">Rotina e saúde</a><a href="#projeto">O projeto</a></nav>
+      </div>
+    </header>
+    <section id="inicio" class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Meio ambiente e saúde · Guia residencial</span>
+          <h1>O descarte certo <span>começa em casa.</span>
+</h1>
+          <p>Saiba o que separar, em qual dia colocar na coleta e como cuidar do espaço que compartilhamos. Um guia prático para os moradores das três residências.</p>
+          <div class="actions">
+<a href="#calendario" class="btn primary">Ver dias de coleta ↓</a><a href="#consulta" class="btn secondary">Descobrir onde descartar</a>
+</div>
+        </div>
+        <img class="hero-art" src="assets/illustrations/hero.svg" width="390" height="330" alt="Ilustração de dois recipientes de resíduos, folhas e uma caixa de papelão">
+      </div>
+    </section>
+    <main id="conteudo">
+      <section id="calendario" class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">01 / Calendário da comunidade</span>
+              <h2>Qual lixo sai hoje?</h2>
+              <p class="section-note">Rotina semanal informada pelos moradores, sujeita à confirmação oficial.</p>
+            </div>
+            <button class="btn outline noprint" id="printBtn" type="button">Imprimir calendário</button>
+          </div>
+          <div class="calendar-card">
+            <div class="today" aria-live="polite">
+              <div>
+                <span class="today-label" id="todayDate">Rotina semanal</span>
+                <br>
+                <strong id="todayTitle">Confira os dias abaixo</strong>
+                <p id="todayDetail">Separe os resíduos de acordo com o calendário.</p>
+              </div>
+            </div>
+            <ol class="week" aria-label="Dias da coleta">
+              <li class="day common" data-day="1">
+<span class="dayicon" aria-hidden="true">▤</span><span class="dow">Segunda</span><span class="kind">Lixo comum</span>
+</li>
+              <li class="day recycle" data-day="2">
+<span class="dayicon" aria-hidden="true">♻</span><span class="dow">Terça</span><span class="kind">Coleta seletiva</span>
+</li>
+              <li class="day common" data-day="3">
+<span class="dayicon" aria-hidden="true">▤</span><span class="dow">Quarta</span><span class="kind">Lixo comum</span>
+</li>
+              <li class="day recycle" data-day="4">
+<span class="dayicon" aria-hidden="true">♻</span><span class="dow">Quinta</span><span class="kind">Coleta seletiva</span>
+</li>
+              <li class="day common" data-day="5">
+<span class="dayicon" aria-hidden="true">▤</span><span class="dow">Sexta</span><span class="kind">Lixo comum</span>
+</li>
+              <li class="day rest" data-day="6">
+<span class="dayicon" aria-hidden="true">—</span><span class="dow">Sábado</span><span class="kind">Sem coleta regular informada</span>
+</li>
+              <li class="day rest" data-day="0">
+<span class="dayicon" aria-hidden="true">—</span><span class="dow">Domingo</span><span class="kind">Sem coleta regular informada</span>
+</li>
+            </ol>
+            <div class="bulky">
+              <span class="square" aria-hidden="true">▣</span>
+              <div>
+                <h3>Cata-Bagulho · programação mensal informada</h3>
+                <p>Para móveis, colchões e outros itens volumosos aceitos. Confirme a próxima data, o horário e os materiais aceitos antes de colocar os objetos na rua. <a href="https://prefeitura.sp.gov.br/sp-mais-limpo" target="_blank" rel="noopener noreferrer">Consultar programação oficial</a>.</p>
+              </div>
+            </div>
+            <p class="calendar-note">Calendário informado pelos moradores para esta região. Os horários exatos e alterações em feriados devem ser consultados no <a href="https://coleta.prefeitura.sp.gov.br/" target="_blank" rel="noopener noreferrer">serviço oficial da Prefeitura</a>. Na coleta diurna, coloque os sacos na calçada até duas horas antes do horário previsto; na noturna, somente após as 18h, respeitando a programação local. Mantenha a passagem livre.</p>
+            <div class="qr-print" id="qr-code">
+              <img src="assets/images/qrcode-descarte-consciente.png" alt="QR Code do guia digital">
+              <div>
+                <strong>Guia Digital para Descarte Correto de Resíduos</strong>
+                <p>Escaneie com o celular para consultar as orientações completas.</p>
+                <small class="print-url">amandapardini-22.github.io/descarte-correto-de-residuos/</small>
+                <div class="qr-actions noprint">
+<button type="button" class="btn outline" id="downloadQr">Salvar QR Code</button><a class="btn outline" href="https://prefeitura.sp.gov.br/sp-mais-limpo" target="_blank" rel="noopener noreferrer">Consultar coleta oficial</a>
+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="separar" class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">02 / Separe antes de descartar</span>
+              <h2>Cada resíduo tem seu destino.</h2>
+            </div>
+            <p>Não é necessário ir a um ecoponto para os recicláveis domésticos aceitos pela coleta seletiva da nossa região.</p>
+          </div>
+          <div class="cards">
+            <article class="material">
+              <div class="material-header">
+                <span class="material-icon" aria-hidden="true">♻</span>
+                <div>
+                  <h3>Recicláveis</h3>
+                  <span class="schedule">Terça e quinta</span>
+                </div>
+              </div>
+              <p class="example">Papel limpo, papelão, garrafas PET, latas, embalagens plásticas e potes ou garrafas de vidro.</p>
+              <p>Retire alimentos e líquidos, mantenha os materiais secos e coloque-os em saco separado do lixo comum. Papel, vidro, metal e plástico aceitos podem ir juntos no saco de recicláveis.</p>
+              <p class="tip"><strong>Atenção:</strong> proteja cacos em uma embalagem rígida, feche e identifique como vidro quebrado. Confirme o destino com o serviço de coleta.</p>
+            </article>
+            <article class="material commoncard">
+              <div class="material-header">
+                <span class="material-icon" aria-hidden="true">▤</span>
+                <div>
+                  <h3>Lixo comum</h3>
+                  <span class="schedule">Segunda, quarta e sexta</span>
+                </div>
+              </div>
+              <p class="example">Cascas, restos de comida, borra de café, papel higiênico, fraldas e esponjas sujas.</p>
+              <p>Orgânicos e rejeitos não devem ir junto aos recicláveis. Acondicione o lixo comum em sacos bem fechados; se houver compostagem, os orgânicos adequados podem ser aproveitados separadamente.</p>
+              <p class="tip"><strong>Dica:</strong> evite deixar sacos abertos ou acumulados nas áreas de circulação.</p>
+            </article>
+            <article class="material bulkycard">
+              <div class="material-header">
+                <span class="material-icon" aria-hidden="true">▣</span>
+                <div>
+                  <h3>Resíduos volumosos</h3>
+                  <span class="schedule">Cata-Bagulho · confirme a data</span>
+                </div>
+              </div>
+              <p class="example">Sofás, móveis usados, colchões e outros objetos aceitos pelo serviço.</p>
+              <p>Guarde em local adequado até a data confirmada. Não deixe objetos na passagem das casas ou na calçada fora da programação.</p>
+              <p class="tip">Se precisar de outra opção, consulte os <a href="https://prefeitura.sp.gov.br/sp-mais-limpo" target="_blank" rel="noopener noreferrer">ecopontos e as regras municipais</a>.</p>
+            </article>
+            <article class="material specialcard">
+              <div class="material-header">
+                <span class="material-icon" aria-hidden="true">!</span>
+                <div>
+                  <h3>Resíduos especiais</h3>
+                  <span class="schedule">Entrega específica</span>
+                </div>
+              </div>
+              <p class="example">Pilhas, baterias, lâmpadas, medicamentos vencidos, óleo de cozinha e pequenos eletrônicos.</p>
+              <p>Não misture esses materiais com lixo comum ou recicláveis. Procure locais de recebimento adequados: UBS ou farmácias habilitadas para medicamentos e pontos de coleta específicos para os demais itens.</p>
+              <p class="tip">Guarde o óleo frio em garrafa fechada. <a href="https://prefeitura.sp.gov.br/web/saude/w/vigilancia_em_saude/saude_ambiental/353036" target="_blank" rel="noopener noreferrer">Veja orientações e pontos de descarte.</a></p>
+            </article>
+          </div>
+          <div class="finder" id="consulta">
+            <div>
+              <h3>Estou com um resíduo. E agora?</h3>
+              <p>Escolha um item para descobrir como descartar. A consulta funciona neste dispositivo, sem enviar seus dados.</p>
+            </div>
+            <div>
+              <label for="wasteSelect">Qual item você quer descartar?</label>
+              <select id="wasteSelect">
+                <option value="">Selecione um item</option>
+                <optgroup label="Embalagens">
+                  <option value="pet">Garrafa PET</option>
+                  <option value="paper">Caixa de papelão limpa</option>
+                  <option value="can">Latinha de metal</option>
+                  <option value="glass">Garrafa de vidro</option>
+                  <option value="carton">Embalagem longa vida</option>
+                  <option value="plastic">Embalagem plástica limpa</option>
+                  <option value="broken">Vidro de embalagem quebrado</option>
+                </optgroup>
+                <optgroup label="Resíduos da casa">
+                  <option value="food">Restos de comida</option>
+                  <option value="dirty">Papel engordurado</option>
+                  <option value="diaper">Fralda usada</option>
+                  <option value="tissue">Papel higiênico e guardanapo sujo</option>
+                  <option value="coffee">Borra de café</option>
+                </optgroup>
+                <optgroup label="Outros">
+                  <option value="sofa">Sofá ou colchão</option>
+                  <option value="battery">Pilha ou bateria</option>
+                  <option value="med">Medicamento vencido</option>
+                  <option value="oil">Óleo de cozinha usado</option>
+                  <option value="electronics">Celular ou eletrônico pequeno</option>
+                  <option value="lamp">Lâmpada</option>
+                  <option value="tire">Pneu usado</option>
+                </optgroup>
+              </select>
+            </div>
+            <div id="wasteResult" class="result" role="status">O destino e os cuidados aparecerão aqui.</div>
+          </div>
+          <p class="finder-note">Não encontrou seu item? Consulte a <a href="https://www.reciclasampa.com.br/reciclavel" target="_blank" rel="noopener noreferrer">lista de recicláveis</a>, a <a href="https://www.reciclasampa.com.br/residuo-comum" target="_blank" rel="noopener noreferrer">lista de lixo comum</a> ou os <a href="https://www.reciclasampa.com.br/pontos-de-coleta" target="_blank" rel="noopener noreferrer">pontos de entrega</a>.</p>
+        </div>
+      </section>
+      <section id="rotina" class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">03 / Meio ambiente e saúde</span>
+              <h2>Um cuidado de todos os dias.</h2>
+            </div>
+            <p>Separar os resíduos ajuda a manter as áreas compartilhadas limpas, reduz o risco de mau cheiro, pragas e acidentes e favorece o reaproveitamento de materiais.</p>
+          </div>
+          <div class="routine">
+            <article class="step">
+              <span>1</span>
+              <h3>Separe dentro de casa</h3>
+              <p>Use sacos ou recipientes identificados para recicláveis e lixo comum. Não é necessário comprar novas lixeiras se as existentes forem suficientes.</p>
+            </article>
+            <article class="step">
+              <span>2</span>
+              <h3>Respeite os dias</h3>
+              <p>Consulte o calendário e deixe os resíduos na calçada somente próximo à coleta. Confirme mudanças na programação.</p>
+            </article>
+            <article class="step">
+              <span>3</span>
+              <h3>Cuide do espaço comum</h3>
+              <p>Mantenha os corredores e escadas livres, os sacos fechados e os recipientes limpos. Combine uma rotina com os demais moradores.</p>
+            </article>
+          </div>
+          <div class="health-panel">
+            <div class="health-heading">
+              <span class="eyebrow">Por que isso importa?</span>
+              <h3>Descarte correto também é cuidado com a saúde.</h3>
+              <p>Pequenos cuidados ajudam a evitar riscos ambientais e acidentes. Estas orientações são preventivas, não indicam que existam doenças ou infestações na comunidade.</p>
+            </div>
+            <div class="health-grid">
+              <article>
+                <h3>Dengue</h3>
+                <p>Guarde embalagens e recicláveis longe da chuva. Esvazie recipientes que acumulam água e mantenha as lixeiras tampadas.</p>
+                <a href="https://prefeitura.sp.gov.br/w/servico/prevencao-e-controle-da-dengue" target="_blank" rel="noopener noreferrer">Orientações de prevenção</a>
+              </article>
+              <article>
+                <h3>Leptospirose</h3>
+                <p>Feche os sacos e recipientes, evite restos de alimento expostos e não acumule entulho, para reduzir a atração e o abrigo de roedores.</p>
+                <a href="https://prefeitura.sp.gov.br/web/saude/w/vigilancia_em_saude/doencas_e_agravos/leptospirose" target="_blank" rel="noopener noreferrer">Cuidados com roedores</a>
+              </article>
+              <article>
+                <h3>Acidentes e contaminação</h3>
+                <p>Embale e identifique cacos de vidro, encaminhe resíduos especiais a pontos adequados e mantenha corredores livres.</p>
+                <a href="https://prefeitura.sp.gov.br/web/saude/w/vigilancia_em_saude/saude_ambiental/353036" target="_blank" rel="noopener noreferrer">Orientações de saúde ambiental</a>
+              </article>
+            </div>
+          </div>
+          <div class="check-box">
+            <div>
+              <h3>Checklist antes de descartar</h3>
+              <p>Marque o que já fez. O progresso serve apenas para sua conferência e não é enviado nem armazenado.</p>
+              <div class="progress" aria-hidden="true"><span id="progressFill"></span></div>
+              <p class="check-status" id="checkStatus" role="status">0 de 6 cuidados concluídos</p>
+              <button id="resetBtn" type="button" class="btn outline reset">Limpar marcações</button>
+            </div>
+            <div class="checks" id="checks">
+<label class="check"><input type="checkbox"> Separei os recicláveis do lixo comum.</label><label class="check"><input type="checkbox"> Retirei restos de alimentos e líquidos das embalagens.</label><label class="check"><input type="checkbox"> Separei os resíduos especiais e volumosos.</label><label class="check"><input type="checkbox"> Verifiquei o dia e o horário da coleta.</label><label class="check"><input type="checkbox"> Mantive os sacos fechados e a passagem livre.</label><label class="check"><input type="checkbox"> Protegi os recipientes da chuva e evitei água parada.</label>
+</div>
+          </div>
+        </div>
+      </section>
+      <section id="projeto" class="section">
+        <div class="wrap about">
+          <div>
+            <span class="eyebrow">04 / Sobre a iniciativa</span>
+            <h2>Tecnologia a serviço da comunidade.</h2>
+            <p>O Guia Digital para Descarte Correto de Resíduos é uma iniciativa acadêmica de extensão do curso de Análise e Desenvolvimento de Sistemas da Universidade Cruzeiro do Sul. Foi desenvolvido para apoiar os nove moradores de três casas em um mesmo terreno residencial de São Paulo.</p>
+            <p>A proposta combina orientação educativa presencial, guia interativo e material impresso com QR Code. Aplica conhecimentos de HTML, CSS e JavaScript para facilitar o acesso à informação e apoiar a organização coletiva do descarte.</p>
+          </div>
+          <div class="ods">
+            <article>
+              <b>ODS 3</b>
+              <span class="ods-priority">Principal · meta 3.9</span>
+              <h3>Saúde e bem-estar</h3>
+              <p>Prevenção de riscos associados à poluição e a substâncias perigosas, com orientação para o descarte seguro.</p>
+              <a href="https://brasil.un.org/pt-br/sdgs/3" target="_blank" rel="noopener noreferrer">Conheça o ODS 3</a>
+            </article>
+            <article>
+              <b>ODS 12</b>
+              <span class="ods-priority">Complementar · metas 12.5 e 12.8</span>
+              <h3>Consumo e produção responsáveis</h3>
+              <p>Redução, reutilização, reciclagem e informação para práticas sustentáveis.</p>
+              <a href="https://brasil.un.org/pt-br/sdgs/12" target="_blank" rel="noopener noreferrer">Conheça o ODS 12</a>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section sources" id="referencias">
+        <div class="wrap">
+          <details>
+            <summary>Fontes e referências</summary>
+            <ul>
+              <li><a href="https://coleta.prefeitura.sp.gov.br/" target="_blank" rel="noopener noreferrer">Prefeitura de São Paulo — Consulta de dias e horários da coleta</a></li>
+              <li><a href="https://prefeitura.sp.gov.br/sp-mais-limpo" target="_blank" rel="noopener noreferrer">Prefeitura de São Paulo — Cata-Bagulho e Ecopontos</a></li>
+              <li><a href="https://prefeitura.sp.gov.br/w/servico/coleta-de-lixo" target="_blank" rel="noopener noreferrer">Prefeitura de São Paulo — Coleta de lixo domiciliar</a></li>
+              <li><a href="https://prefeitura.sp.gov.br/noticia/servico-saiba-como-consultar-dias-e-horarios-das-coletas-domiciliar-seletiva-e-cata-bagulho" target="_blank" rel="noopener noreferrer">Prefeitura de São Paulo — Orientações para disponibilizar resíduos</a></li>
+              <li><a href="https://prefeitura.sp.gov.br/web/spregula/w/residuos_solidos/noticias/337523" target="_blank" rel="noopener noreferrer">SP Regula — Orientações para coleta seletiva</a></li>
+              <li><a href="https://prefeitura.sp.gov.br/web/saude/w/vigilancia_em_saude/saude_ambiental/353036" target="_blank" rel="noopener noreferrer">Secretaria Municipal da Saúde — Resíduos especiais</a></li>
+              <li>
+<a href="https://brasil.un.org/pt-br/sdgs/12" target="_blank" rel="noopener noreferrer">ONU Brasil — ODS 12</a> · <a href="https://brasil.un.org/pt-br/sdgs/3" target="_blank" rel="noopener noreferrer">ODS 3</a>
+</li>
+            </ul>
+            <p>Orientações gerais consultadas em novembro de 2026. Os dias da rotina residencial foram informados pela comunidade; este guia não substitui o calendário oficial atualizado.</p>
+          </details>
+          <details class="research-refs">
+            <summary>Referências da pesquisa acadêmica</summary>
+            <ul>
+              <li>BRASIL. Lei nº 12.305, de 2 de agosto de 2010. Institui a Política Nacional de Resíduos Sólidos. Brasília, DF, 2010. <a href="https://www2.camara.leg.br/legin/fed/lei/2010/lei-12305-2-agosto-2010-607598-normaatualizada-pl.html" target="_blank" rel="noopener noreferrer">Consultar</a>
+</li>
+              <li>FUNDAÇÃO NACIONAL DE SAÚDE (FUNASA). Descarte inadequado de resíduos amplia riscos à saúde. 3 set. 2026. <a href="https://www.gov.br/funasa/pt-br/assuntos/noticias/2026/setembro/descarte-inadequado-de-residuos-amplia-riscos-a-saude" target="_blank" rel="noopener noreferrer">Consultar</a>
+</li>
+              <li>GOUVEIA, Nelson. Resíduos sólidos urbanos: impactos socioambientais e perspectiva de manejo sustentável com inclusão social. Ciência &amp; Saúde Coletiva, Rio de Janeiro, v. 17, n. 6, p. 1503–1510, 2012. <a href="https://doi.org/10.1590/S1413-81232012000600014" target="_blank" rel="noopener noreferrer">Consultar</a>
+</li>
+              <li>ONU BRASIL. Objetivo de Desenvolvimento Sustentável 12: consumo e produção responsáveis. [s.d.]. <a href="https://brasil.un.org/pt-br/sdgs/12" target="_blank" rel="noopener noreferrer">Consultar</a>
+</li>
+              <li>ONU BRASIL. Objetivo de Desenvolvimento Sustentável 3: saúde e bem-estar. [s.d.]. <a href="https://brasil.un.org/pt-br/sdgs/3" target="_blank" rel="noopener noreferrer">Consultar</a>
+</li>
+              <li>RECICLA SAMPA. Lista de resíduos recicláveis; lista de resíduos comuns; perguntas frequentes; pontos de coleta. [s.d.]. <a href="https://www.reciclasampa.com.br/reciclavel" target="_blank" rel="noopener noreferrer">Fonte 1</a> · <a href="https://www.reciclasampa.com.br/residuo-comum" target="_blank" rel="noopener noreferrer">Fonte 2</a> · <a href="https://www.reciclasampa.com.br/perguntas-frequentes" target="_blank" rel="noopener noreferrer">Fonte 3</a> · <a href="https://www.reciclasampa.com.br/pontos-de-coleta" target="_blank" rel="noopener noreferrer">Fonte 4</a>
+</li>
+              <li>SACHS, Ignacy. Ecodesenvolvimento: crescer sem destruir. São Paulo: Vértice, 1986. Resumo bibliográfico consultado no UrbanData Brasil (USP). <a href="https://urbandatabrasil.fflch.usp.br/livros/ecodesenvolvimento-crescer-sem-destruir" target="_blank" rel="noopener noreferrer">Consultar</a>
+</li>
+              <li>SINIR. Sistema Nacional de Informações sobre a Gestão de Resíduos Sólidos. O que é logística reversa. [s.d.]. <a href="https://sinir.gov.br/perfis/logistica-reversa/logistica-reversa/" target="_blank" rel="noopener noreferrer">Consultar</a>
+</li>
+              <li>SP REGULA. Coleta domiciliar comum. [s.d.]. <a href="https://prefeitura.sp.gov.br/web/spregula/w/residuos_solidos/residuos_solidos/domiciliar/4636" target="_blank" rel="noopener noreferrer">Consultar</a>
+</li>
+              <li>SP REGULA. Coleta domiciliar seletiva. 27 abr. 2026. <a href="https://prefeitura.sp.gov.br/spregula/w/residuos_solidos/coleta_seletiva/4623" target="_blank" rel="noopener noreferrer">Consultar</a>
+</li>
+              <li>SP REGULA. Quantitativos: resíduos coletados no município. 9 out. 2026. <a href="https://prefeitura.sp.gov.br/web/spregula/w/residuos_solidos/menu/185375" target="_blank" rel="noopener noreferrer">Consultar</a>
+</li>
+              <li>SÃO PAULO (Município). Prefeitura. Consulte a programação do Cata-Bagulho na sua região. [s.d.]. <a href="https://prefeitura.sp.gov.br/web/secretaria_executiva_de_limpeza_urbana/w/noticias/284163" target="_blank" rel="noopener noreferrer">Consultar</a>
+</li>
+              <li>SÃO PAULO (Município). Prefeitura. Prevenção e controle da dengue. [s.d.]. <a href="https://prefeitura.sp.gov.br/w/servico/prevencao-e-controle-da-dengue" target="_blank" rel="noopener noreferrer">Consultar</a>
+</li>
+              <li>SÃO PAULO (Município). Prefeitura. SP Mais Limpo: Cata-Bagulho e ecopontos. [s.d.]. <a href="https://prefeitura.sp.gov.br/sp-mais-limpo" target="_blank" rel="noopener noreferrer">Consultar</a>
+</li>
+              <li>SÃO PAULO (Município). Secretaria Municipal da Saúde. Leptospirose: informações para o cidadão e profissionais de saúde. 22 dez. 2025. <a href="https://prefeitura.sp.gov.br/web/saude/w/vigilancia_em_saude/doencas_e_agravos/leptospirose" target="_blank" rel="noopener noreferrer">Consultar</a>
+</li>
+              <li>WORLD HEALTH ORGANIZATION (WHO). Throwing away our health: the impact of solid waste on human health – evidence, knowledge gaps, and health sector responses. Genebra: WHO, 2025. Página de publicação: 16 dez. 2025. <a href="https://www.who.int/publications/i/item/9789240118287" target="_blank" rel="noopener noreferrer">Consultar</a>
+</li>
+            </ul>
+            <p>Referências do registro de pesquisa, consultadas em 16/11/2026. O guia contém orientações de caráter educativo.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="wrap foot">
+        <div>
+<strong>Descarte Consciente</strong>Projeto de Extensão · Meio Ambiente e Saúde<br>Universidade Cruzeiro do Sul · Análise e Desenvolvimento de Sistemas</div>
+        <div>Amanda Gomes de Oliveira Pardini · 2026/2<br><a href="#inicio">Voltar ao topo ↑</a>
+</div>
+      </div>
+    </footer>
+  </body>
+</html>
