@@ -14,7 +14,3 @@ assets/images/qrcode-descarte-consciente.png
 README.md
 ```
 
-## Executar localmente
-
-Abra esta pasta no VS Code. Abra `index.html` no navegador ou use a extensão Live Server. Não há dependências externas, compilação nem instalação de pacotes. Para testar por HTTP, também é possível executar `python -m http.server 8000` na pasta do projeto e acessar `http://localhost:8000`.
-
