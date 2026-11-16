@@ -325,7 +325,7 @@ p+p {
 }
 
 .day {
-  min-height:112px;
+  min-height:128px;
   border:1px solid transparent;
   border-radius:14px;
   padding:12px 10px;
@@ -346,6 +346,12 @@ p+p {
   font-size:.77rem;
   font-weight:650;
   overflow-wrap:anywhere;
+}
+
+.day .collection-time {
+  font-size:.9rem;
+  font-weight:850;
+  font-variant-numeric:tabular-nums;
 }
 
 .day .dayicon {
@@ -840,7 +846,7 @@ p+p {
     gap:8px;
   }
   .day {
-    min-height:86px;
+    min-height:100px;
   }
   .day:last-child {
     grid-column:1/-1;
@@ -1145,7 +1151,7 @@ p+p {
     font-size:9pt;
   }
   .calendar-card .day {
-    min-height:80px;
+    min-height:96px;
   }
   .week {
     gap:5px;

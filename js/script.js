@@ -20,27 +20,34 @@ document.addEventListener('keydown', e => {
 });
 window.matchMedia('(max-width:640px)').addEventListener('change', closeMenu);
 
-// Calendário: rotina semanal informada pelos moradores (São Paulo).
+// Calendário: programação oficial por CEP, consultada em 16/11/2026.
+// Os próprios cartões do HTML fornecem os dias e horários, inclusive sem JavaScript.
 const weekdayKeys = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const collectionDays = [...document.querySelectorAll('.day')];
+const schedule = new Map(collectionDays.map(el => [Number(el.dataset.day), {
+  type: el.classList.contains('common') ? 'common' : el.classList.contains('recycle') ? 'recycle' : 'rest',
+  time: el.querySelector('time')?.dateTime || ''
+}]));
 function updateToday(now = new Date()) {
   const tz = 'America/Sao_Paulo';
   const key = new Intl.DateTimeFormat('en-US', { weekday: 'short', timeZone: tz }).format(now);
   const day = weekdayKeys.indexOf(key);
-  const common = [1, 3, 5].includes(day);
-  const recycle = [2, 4].includes(day);
+  const slot = schedule.get(day);
+  const common = slot?.type === 'common';
+  const recycle = slot?.type === 'recycle';
 
   document.getElementById('todayDate').textContent = 'Hoje · ' + new Intl.DateTimeFormat('pt-BR', {
     weekday: 'long', day: 'numeric', month: 'long', timeZone: tz
   }).format(now);
   document.getElementById('todayTitle').textContent = common
-    ? 'Dia de lixo comum'
-    : recycle ? 'Dia de coleta seletiva' : 'Sem coleta regular informada';
+    ? 'Dia de lixo comum · ' + slot.time
+    : recycle ? 'Dia de coleta seletiva · ' + slot.time : 'Sem coleta regular hoje';
   document.getElementById('todayDetail').textContent = common
-    ? 'Prepare os sacos de orgânicos e rejeitos. Confirme o horário.'
-    : recycle ? 'Prepare os recicláveis limpos e secos. Confirme o horário.'
+    ? 'Horário previsto. Separe orgânicos e rejeitos e coloque os sacos na calçada nas duas horas anteriores à coleta.'
+    : recycle ? 'Horário previsto. Separe os recicláveis limpos e secos e coloque-os na calçada nas duas horas anteriores à coleta.'
       : 'Guarde os resíduos adequadamente até o próximo dia de coleta.';
 
-  document.querySelectorAll('.day').forEach(el => {
+  collectionDays.forEach(el => {
     const active = Number(el.dataset.day) === day;
     el.classList.toggle('is-today', active);
     if (active) el.setAttribute('aria-current', 'date');
@@ -58,19 +65,19 @@ setInterval(() => updateToday(), 60000);
 
 // Consulta interativa: as chaves correspondem às opções no HTML.
 const guidance = {
-  pet: ["Coleta seletiva · terça e quinta", "Esvazie e retire restos de líquidos."],
-  paper: ["Coleta seletiva · terça e quinta", "Mantenha o papelão seco e dobre a caixa."],
-  can: ["Coleta seletiva · terça e quinta", "Retire resíduos do conteúdo."],
-  glass: ["Coleta seletiva · terça e quinta", "Esvazie e proteja a embalagem contra quebras."],
-  carton: ["Coleta seletiva · terça e quinta", "Esvazie, retire os resíduos e compacte a embalagem."],
-  plastic: ["Coleta seletiva · terça e quinta", "Retire os resíduos e deixe a embalagem seca."],
-  broken: ["Coleta seletiva: atenção especial", "Proteja os cacos em embalagem resistente, identifique e confira a orientação da coleta."],
-  food: ["Lixo comum · segunda, quarta e sexta", "Acondicione em saco fechado ou aproveite em compostagem adequada."],
-  dirty: ["Lixo comum · segunda, quarta e sexta", "Papel com gordura não deve contaminar os recicláveis."],
-  diaper: ["Lixo comum · segunda, quarta e sexta", "Feche bem o saco."],
-  tissue: ["Lixo comum · segunda, quarta e sexta", "Não misture papéis sanitários ou sujos aos recicláveis."],
-  coffee: ["Lixo comum · segunda, quarta e sexta", "Acondicione em saco fechado ou utilize em compostagem adequada."],
-  sofa: ["Cata-Bagulho mensal", "Confirme a próxima data e se o item é aceito antes de colocá-lo na rua."],
+  pet: ["Coleta seletiva · quinta, 09:16", "Esvazie e retire restos de líquidos."],
+  paper: ["Coleta seletiva · quinta, 09:16", "Mantenha o papelão seco e dobre a caixa."],
+  can: ["Coleta seletiva · quinta, 09:16", "Retire resíduos do conteúdo."],
+  glass: ["Coleta seletiva · quinta, 09:16", "Esvazie e proteja a embalagem contra quebras."],
+  carton: ["Coleta seletiva · quinta, 09:16", "Esvazie, retire os resíduos e compacte a embalagem."],
+  plastic: ["Coleta seletiva · quinta, 09:16", "Retire os resíduos e deixe a embalagem seca."],
+  broken: ["Vidro quebrado · confirme o destino", "Proteja os cacos em embalagem resistente, identifique e confira a orientação da coleta."],
+  food: ["Lixo comum · segunda 12:05, quarta 09:33 e sexta 12:23", "Acondicione em saco fechado ou aproveite em compostagem adequada."],
+  dirty: ["Lixo comum · segunda 12:05, quarta 09:33 e sexta 12:23", "Papel com gordura não deve contaminar os recicláveis."],
+  diaper: ["Lixo comum · segunda 12:05, quarta 09:33 e sexta 12:23", "Feche bem o saco."],
+  tissue: ["Lixo comum · segunda 12:05, quarta 09:33 e sexta 12:23", "Não misture papéis sanitários ou sujos aos recicláveis."],
+  coffee: ["Lixo comum · segunda 12:05, quarta 09:33 e sexta 12:23", "Acondicione em saco fechado ou utilize em compostagem adequada."],
+  sofa: ["Cata-Bagulho · confirme a programação", "Confirme a próxima data e se o item é aceito antes de colocá-lo na rua."],
   battery: ["Resíduo especial", "Entregue em ponto de recebimento de pilhas e baterias."],
   med: ["Resíduo especial", "Entregue em UBS ou farmácia habilitada. Não descarte em pias ou vasos sanitários."],
   oil: ["Resíduo especial", "Guarde o óleo frio em garrafa fechada e encaminhe para coleta de óleo."],

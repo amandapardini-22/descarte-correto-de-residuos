@@ -40,7 +40,7 @@
             <div>
               <span class="eyebrow">01 / Calendário da comunidade</span>
               <h2>Qual lixo sai hoje?</h2>
-              <p class="section-note">Rotina semanal informada pelos moradores, sujeita à confirmação oficial.</p>
+              <p class="section-note">Programação oficial da Loga para o CEP 02324-080 (Jaçanã/Tremembé), consultada em 16/11/2026.</p>
             </div>
             <button class="btn outline noprint" id="printBtn" type="button">Imprimir calendário</button>
           </div>
@@ -55,26 +55,44 @@
             </div>
             <ol class="week" aria-label="Dias da coleta">
               <li class="day common" data-day="1">
-<span class="dayicon" aria-hidden="true">▤</span><span class="dow">Segunda</span><span class="kind">Lixo comum</span>
-</li>
-              <li class="day recycle" data-day="2">
-<span class="dayicon" aria-hidden="true">♻</span><span class="dow">Terça</span><span class="kind">Coleta seletiva</span>
-</li>
+                <span class="dayicon" aria-hidden="true">▤</span>
+                <span class="dow">Segunda</span>
+                <span class="kind">Lixo comum</span>
+                <time class="collection-time" datetime="12:05">12:05</time>
+              </li>
+              <li class="day rest" data-day="2">
+                <span class="dayicon" aria-hidden="true">—</span>
+                <span class="dow">Terça</span>
+                <span class="kind">Sem coleta regular</span>
+              </li>
               <li class="day common" data-day="3">
-<span class="dayicon" aria-hidden="true">▤</span><span class="dow">Quarta</span><span class="kind">Lixo comum</span>
-</li>
+                <span class="dayicon" aria-hidden="true">▤</span>
+                <span class="dow">Quarta</span>
+                <span class="kind">Lixo comum</span>
+                <time class="collection-time" datetime="09:33">09:33</time>
+              </li>
               <li class="day recycle" data-day="4">
-<span class="dayicon" aria-hidden="true">♻</span><span class="dow">Quinta</span><span class="kind">Coleta seletiva</span>
-</li>
+                <span class="dayicon" aria-hidden="true">♻</span>
+                <span class="dow">Quinta</span>
+                <span class="kind">Coleta seletiva</span>
+                <time class="collection-time" datetime="09:16">09:16</time>
+              </li>
               <li class="day common" data-day="5">
-<span class="dayicon" aria-hidden="true">▤</span><span class="dow">Sexta</span><span class="kind">Lixo comum</span>
-</li>
+                <span class="dayicon" aria-hidden="true">▤</span>
+                <span class="dow">Sexta</span>
+                <span class="kind">Lixo comum</span>
+                <time class="collection-time" datetime="12:23">12:23</time>
+              </li>
               <li class="day rest" data-day="6">
-<span class="dayicon" aria-hidden="true">—</span><span class="dow">Sábado</span><span class="kind">Sem coleta regular informada</span>
-</li>
+                <span class="dayicon" aria-hidden="true">—</span>
+                <span class="dow">Sábado</span>
+                <span class="kind">Sem coleta regular</span>
+              </li>
               <li class="day rest" data-day="0">
-<span class="dayicon" aria-hidden="true">—</span><span class="dow">Domingo</span><span class="kind">Sem coleta regular informada</span>
-</li>
+                <span class="dayicon" aria-hidden="true">—</span>
+                <span class="dow">Domingo</span>
+                <span class="kind">Sem coleta regular</span>
+              </li>
             </ol>
             <div class="bulky">
               <span class="square" aria-hidden="true">▣</span>
@@ -83,7 +101,7 @@
                 <p>Para móveis, colchões e outros itens volumosos aceitos. Confirme a próxima data, o horário e os materiais aceitos antes de colocar os objetos na rua. <a href="https://prefeitura.sp.gov.br/sp-mais-limpo" target="_blank" rel="noopener noreferrer">Consultar programação oficial</a>.</p>
               </div>
             </div>
-            <p class="calendar-note">Calendário informado pelos moradores para esta região. Os horários exatos e alterações em feriados devem ser consultados no <a href="https://coleta.prefeitura.sp.gov.br/" target="_blank" rel="noopener noreferrer">serviço oficial da Prefeitura</a>. Na coleta diurna, coloque os sacos na calçada até duas horas antes do horário previsto; na noturna, somente após as 18h, respeitando a programação local. Mantenha a passagem livre.</p>
+            <p class="calendar-note">Fonte: consulta oficial por CEP, em 16/11/2026. Todas as coletas regulares desta programação são diurnas. Os horários são previstos e podem mudar; confira alterações e feriados no <a href="https://coleta.prefeitura.sp.gov.br/" target="_blank" rel="noopener noreferrer">serviço oficial da Prefeitura</a>. Coloque os sacos na calçada nas duas horas anteriores ao horário previsto da coleta diurna. Mantenha a passagem livre.</p>
             <div class="qr-print" id="qr-code">
               <img src="assets/images/qrcode-descarte-consciente.png" alt="QR Code do guia digital">
               <div>
@@ -91,7 +109,7 @@
                 <p>Escaneie com o celular para consultar as orientações completas.</p>
                 <small class="print-url">amandapardini-22.github.io/descarte-correto-de-residuos/</small>
                 <div class="qr-actions noprint">
-<button type="button" class="btn outline" id="downloadQr">Salvar QR Code</button><a class="btn outline" href="https://prefeitura.sp.gov.br/sp-mais-limpo" target="_blank" rel="noopener noreferrer">Consultar coleta oficial</a>
+<button type="button" class="btn outline" id="downloadQr">Salvar QR Code</button><a class="btn outline" href="https://coleta.prefeitura.sp.gov.br/" target="_blank" rel="noopener noreferrer">Consultar coleta oficial</a>
 </div>
               </div>
             </div>
@@ -113,7 +131,7 @@
                 <span class="material-icon" aria-hidden="true">♻</span>
                 <div>
                   <h3>Recicláveis</h3>
-                  <span class="schedule">Terça e quinta</span>
+                  <span class="schedule">Quinta · 09:16</span>
                 </div>
               </div>
               <p class="example">Papel limpo, papelão, garrafas PET, latas, embalagens plásticas e potes ou garrafas de vidro.</p>
@@ -125,7 +143,7 @@
                 <span class="material-icon" aria-hidden="true">▤</span>
                 <div>
                   <h3>Lixo comum</h3>
-                  <span class="schedule">Segunda, quarta e sexta</span>
+                  <span class="schedule">Segunda 12:05 · Quarta 09:33 · Sexta 12:23</span>
                 </div>
               </div>
               <p class="example">Cascas, restos de comida, borra de café, papel higiênico, fraldas e esponjas sujas.</p>
@@ -303,7 +321,7 @@
 <a href="https://brasil.un.org/pt-br/sdgs/12" target="_blank" rel="noopener noreferrer">ONU Brasil — ODS 12</a> · <a href="https://brasil.un.org/pt-br/sdgs/3" target="_blank" rel="noopener noreferrer">ODS 3</a>
 </li>
             </ul>
-            <p>Orientações gerais consultadas em novembro de 2026. Os dias da rotina residencial foram informados pela comunidade; este guia não substitui o calendário oficial atualizado.</p>
+            <p>Orientações gerais consultadas em novembro de 2026. Os dias e horários da coleta comum e seletiva foram confirmados no portal oficial para o CEP 02324-080 em 16/11/2026. A frequência mensal do Cata-Bagulho foi relatada pelos moradores e ainda não foi confirmada oficialmente. Este guia não substitui a consulta municipal atualizada.</p>
           </details>
           <details class="research-refs">
             <summary>Referências da pesquisa acadêmica</summary>
